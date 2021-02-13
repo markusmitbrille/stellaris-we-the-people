@@ -16,7 +16,6 @@ Interesting effects:
 Interesting conditions:
 
 + ethos: Checks the average ethics divergence on the planet
-+ distance_to_core_percent: Checks the ship/fleet/planet/leader/pop/system's distance to the galactic core in percent, where center = 0 and galactic rim = 100
 
 Interesting scopes:
 
