@@ -22,6 +22,22 @@
   wtp_crackdown: ""
   wtp_crackdown_desc: ""
 
+  wtp_propaganda_enable: ""
+  wtp_propaganda_enable_desc: ""
+  wtp_propaganda_enable_effects_short: ""
+
+  wtp_propaganda_disable: ""
+  wtp_propaganda_disable_desc: ""
+  wtp_propaganda_disable_effects_short: ""
+
+  wtp_crackdown_enable: ""
+  wtp_crackdown_enable_desc: ""
+  wtp_crackdown_enable_effects_short: ""
+
+  wtp_crackdown_disable: ""
+  wtp_crackdown_disable_desc: ""
+  wtp_crackdown_disable_effects_short: ""
+
   wtp.1021.name: ""
   wtp.1021.desc: ""
   wtp.1022.name: ""
