@@ -1,0 +1,11 @@
+on_monthly_pulse = {
+    events = {
+        wtp.1
+    }
+}
+
+on_colonized = {
+    events = {
+        wtp.100
+    }
+}

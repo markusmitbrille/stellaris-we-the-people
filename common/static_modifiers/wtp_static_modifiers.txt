@@ -1,0 +1,77 @@
+wtp_unrest_spiritualist = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_slave_riots.dds"
+	icon_frame = 3
+	pop_government_ethic_attraction = -0.25
+	pop_ethic_materialist_attraction_mult = -0.75
+	pop_ethic_spiritualist_attraction_mult = 1.00
+}
+
+wtp_unrest_materialist = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_slave_riots.dds"
+	icon_frame = 3
+	pop_government_ethic_attraction = -0.25
+	pop_ethic_spiritualist_attraction_mult = -0.75
+	pop_ethic_materialist_attraction_mult = 1.00
+}
+
+wtp_unrest_militarist = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_slave_riots.dds"
+	icon_frame = 3
+	pop_government_ethic_attraction = -0.25
+	pop_ethic_pacifist_attraction_mult = -0.75
+	pop_ethic_militarist_attraction_mult = 1.00
+}
+
+wtp_unrest_pacifist = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_slave_riots.dds"
+	icon_frame = 3
+	pop_government_ethic_attraction = -0.25
+	pop_ethic_militarist_attraction_mult = -0.75
+	pop_ethic_pacifist_attraction_mult = 1.00
+}
+
+wtp_unrest_xenophobe = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_slave_riots.dds"
+	icon_frame = 3
+	pop_government_ethic_attraction = -0.25
+	pop_ethic_xenophile_attraction_mult = -0.75
+	pop_ethic_xenophobe_attraction_mult = 1.00
+}
+
+wtp_unrest_xenophile = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_slave_riots.dds"
+	icon_frame = 3
+	pop_government_ethic_attraction = -0.25
+	pop_ethic_xenophobe_attraction_mult = -0.75
+	pop_ethic_xenophile_attraction_mult = 1.00
+}
+
+wtp_unrest_egalitarian = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_slave_riots.dds"
+	icon_frame = 3
+	pop_government_ethic_attraction = -0.25
+	pop_ethic_authoritarian_attraction_mult = -0.75
+	pop_ethic_egalitarian_attraction_mult = 1.00
+}
+
+wtp_unrest_authoritarian = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_slave_riots.dds"
+	icon_frame = 3
+	pop_government_ethic_attraction = -0.25
+	pop_ethic_egalitarian_attraction_mult = -0.75
+	pop_ethic_authoritarian_attraction_mult = 1.00
+}
+
+wtp_propaganda = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_alien_propaganda.dds"
+	icon_frame = 1
+    pop_government_ethic_attraction = 0.25
+   	planet_pops_consumer_goods_upkeep_mult = 1.00
+}
+
+wtp_crackdown = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_martial_law.dds"
+	icon_frame = 1
+    pop_government_ethic_attraction = 0.25
+	pop_happiness = -0.50
+}

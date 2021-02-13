@@ -1,0 +1,13 @@
+# THIS = planet
+wtp_has_unrest = {
+    OR = {
+        has_modifier = wtp_unrest_spiritualist
+        has_modifier = wtp_unrest_materialist
+        has_modifier = wtp_unrest_militarist
+        has_modifier = wtp_unrest_pacifist
+        has_modifier = wtp_unrest_xenophobe
+        has_modifier = wtp_unrest_xenophile
+        has_modifier = wtp_unrest_egalitarian
+        has_modifier = wtp_unrest_authoritarian
+    }
+}
