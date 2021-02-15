@@ -17,28 +17,98 @@ planet_event = {
 	}
 }
 
-event = {
+country_event = {
 	id = wtp.100
 	hide_window = yes
 	is_triggered_only = yes
+	trigger = {
+		is_country_type = default
+		is_regular_empire = yes
+		num_sectors > 1
+	}
 	immediate = {
 		log = "WTP::WTP.100"
-		every_country = {
-			limit = {
-				num_sectors > 1
-			}
-			every_owned_planet = {
+		every_owned_planet = {
+			if = {
 				limit = {
-					not = {
-						sector = {
-							is_same_value = PREVPREV.capital_scope.sector
-						}
+					sector = {
+						is_same_value = PREVPREV.capital_scope.sector
 					}
 				}
+				set_variable = {
+					which = wtp_unrest
+					value = 0
+				}
+			}
+			else = {
 				planet_event = {
 					id = wtp.1
 				}
 			}
+		}
+	}
+}
+
+country_event = {
+	id = wtp.101
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NAND = {
+			is_country_type = default
+			is_regular_empire = yes
+		}
+	}
+	immediate = {
+		log = "WTP::WTP.101"
+		every_owned_planet = {
+			wtp_effect_remove_unrest = yes
+			set_variable = {
+				which = wtp_unrest
+				value = 0
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = wtp.102
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "WTP::WTP.102"
+		wtp_effect_remove_unrest = yes
+		set_variable = {
+			which = wtp_unrest
+			value = 0
+		}
+	}
+}
+
+planet_event = {
+	id = wtp.103
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "WTP::WTP.103"
+		wtp_effect_remove_unrest = yes
+		set_variable = {
+			which = wtp_unrest
+			value = @unrest_threshold_low
+		}
+	}
+}
+
+planet_event = {
+	id = wtp.104
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "WTP::WTP.104"
+		wtp_effect_remove_unrest = yes
+		set_variable = {
+			which = wtp_unrest
+			value = @unrest_threshold_low
 		}
 	}
 }
@@ -119,8 +189,13 @@ planet_event = {
 					which = wtp_unrest
 					value >= @unrest_threshold_high
 				}
-				not = {
+				NOT = {
 					wtp_trigger_has_unrest = yes
+				}
+				NOT = {
+					owner = {
+						has_modifier = wtp_mod_recent_revolution
+					}
 				}
 			}
 			planet_event = {
@@ -146,6 +221,11 @@ planet_event = {
 					value >= @rebellion_threshold
 				}
 				wtp_trigger_has_unrest = yes
+				NOT = {
+					owner = {
+						has_modifier = wtp_mod_recent_revolution
+					}
+				}
 			}
 			planet_event = {
 				id = wtp.4

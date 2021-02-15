@@ -160,7 +160,7 @@ wtp_effect_start_war = {
 					federation = {
 						every_member = {
 							limit = {
-								not = {
+								NOT = {
 									is_country = prevprev
 								}
 							}
@@ -174,11 +174,16 @@ wtp_effect_start_war = {
 			}
 		}
 	}
-	# declare war
 	event_target:wtp_mother_country = {
+		# declare war
 		declare_war = {
 			target = event_target:wtp_rebel_alliance_leader
 			attacker_war_goal = wtp_wg_revolutionary_war
+		}
+		# boost govenrment ethics
+		add_modifier = {
+			modifier = wtp_mod_recent_revolution
+			years = 10
 		}
 	}
 }
@@ -393,6 +398,11 @@ wtp_effect_release = {
 		}
 		# starting leaders
 		create_starting_leaders = yes
+		# boost govenrment ethics
+		add_modifier = {
+			modifier = wtp_mod_recent_revolution
+			years = 10
+		}
 	}
 }
 

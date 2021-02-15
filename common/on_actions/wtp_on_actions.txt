@@ -1,11 +1,30 @@
-on_monthly_pulse = {
+on_monthly_pulse_country = {
 	events = {
 		wtp.100
+		wtp.101
 	}
 }
 
 on_colonized = {
 	events = {
 		wtp.0
+	}
+}
+
+on_planet_ownerless = {
+	events = {
+		wtp.102
+	}
+}
+
+on_planet_transfer = {
+	events = {
+		wtp.103
+	}
+}
+
+on_planet_conquer = {
+	events = {
+		wtp.104
 	}
 }
