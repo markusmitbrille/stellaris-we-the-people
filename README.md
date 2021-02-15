@@ -9,6 +9,7 @@ TODO:
 + Prevent rebellions after one broke out recently
 + Massive government ethics attraction for rebel empires
 + Expand upon decisions for propaganda/crackdown enabling/disabling
++ Check if icon for recent_revolution country modifier looks okay
 + Test if setting of unrest variable works correctly (especially for existing savegames)
 + Test if from, root and this refer to the things I think they do in scripted effects, especially in case of:
 
