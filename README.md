@@ -6,8 +6,8 @@ Maybe have one rebellion clock variable per planet and increase it every month b
 
 TODO:
 + Check if icon for recent_revolution country modifier looks okay
++ Test if ethos condition works (if not, resort to less performant calculation via pops)
 + Test if conditional event descriptions work properly (whether their condition is evaluated after immediate happened); if not, extract setup event
-+ Test if setting of unrest variable works correctly (especially for existing savegames)
 + Test if on_status_quo works correctly, especially regarding the from scope (check if events are fired correctly and modifiers are changed as intended)
 + Test if from, root and this refer to the things I think they do in scripted effects, especially in case of:
 

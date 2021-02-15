@@ -5,12 +5,6 @@ on_monthly_pulse_country = {
 	}
 }
 
-on_colonized = {
-	events = {
-		wtp.0
-	}
-}
-
 on_planet_ownerless = {
 	events = {
 		wtp.102

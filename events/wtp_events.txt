@@ -3,20 +3,6 @@ namespace = wtp
 @unrest_threshold_medium = 36
 @unrest_threshold_high = 60
 @rebellion_threshold = 120
-# setup
-planet_event = {
-	id = wtp.0
-	hide_window = yes
-	is_triggered_only = yes
-	immediate = {
-		log = "WTP::WTP.0(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
-		set_variable = {
-			which = wtp_unrest
-			value = 0
-		}
-	}
-}
-
 country_event = {
 	id = wtp.100
 	hide_window = yes
