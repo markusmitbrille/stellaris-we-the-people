@@ -1,58 +1,103 @@
 wtp_propaganda_enable = {
-
-}
-
-wtp_propaganda_enable = {
-    
-}
-
-wtp_crackdown_enable = {
-    owned_planets_only = yes
-	sound = event_air_raid_siren
-
+	owned_planets_only = yes
+	sound = event_radio_chatter
 	resources = {
 		category = decisions
 	}
-
-    potential = {
-		owner = { is_regular_empire = yes }
-		NOT = { has_modifier = wtp_crackdown }
+	potential = {
+		owner = {
+			is_regular_empire = yes
+		}
+		not = {
+			has_modifier = wtp_propaganda
+		}
 	}
-
 	effect = {
-        add_modifier = { modifier = wtp_crackdown days = -1 }
+		add_modifier = {
+			modifier = wtp_propaganda
+			days = -1
+		}
 	}
-	
 	ai_weight = {
 		weight = 1
-        modifier = {
-            factor = 0
-            NOT = { wtp_has_unrest = yes }
-        }
+		modifier = {
+			factor = 0
+			not = {
+				wtp_trigger_has_unrest = yes
+			}
+		}
+	}
+}
+
+wtp_propaganda_disable = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	resources = {
+		category = decisions
+	}
+	potential = {
+		has_modifier = wtp_propaganda
+	}
+	effect = {
+		remove_modifier = wtp_propaganda
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			wtp_trigger_has_unrest = yes
+		}
+	}
+}
+
+wtp_crackdown_enable = {
+	owned_planets_only = yes
+	sound = event_air_raid_siren
+	resources = {
+		category = decisions
+	}
+	potential = {
+		owner = {
+			is_regular_empire = yes
+		}
+		not = {
+			has_modifier = wtp_crackdown
+		}
+	}
+	effect = {
+		add_modifier = {
+			modifier = wtp_crackdown
+			days = -1
+		}
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			not = {
+				wtp_trigger_has_unrest = yes
+			}
+		}
 	}
 }
 
 wtp_crackdown_disable = {
-    owned_planets_only = yes
+	owned_planets_only = yes
 	sound = event_administrative_work
-
 	resources = {
 		category = decisions
 	}
-
 	potential = {
 		has_modifier = wtp_crackdown
 	}
-
-    effect = {
-        remove_modifier = wtp_crackdown
+	effect = {
+		remove_modifier = wtp_crackdown
 	}
-	
 	ai_weight = {
 		weight = 1
-        modifier = {
-            factor = 0
-            wtp_has_unrest = yes
-        }
+		modifier = {
+			factor = 0
+			wtp_trigger_has_unrest = yes
+		}
 	}
 }

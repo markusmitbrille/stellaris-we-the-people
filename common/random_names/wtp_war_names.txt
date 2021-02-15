@@ -1,0 +1,32 @@
+war_name_parts_list = {
+	key = "wtp_revolutionary_war_names"
+	parts = {
+		"wtp_revolt" = 1
+		"wtp_revolution" = 1
+		"wtp_national_revolution" = 1
+		"wtp_revolutionary_war" = 1
+		"wtp_civil_war" = 1
+		"wtp_peoples_war" = 1
+		"wtp_war_of_independence" = 1
+		"wtp_independence_war" = 1
+	}
+}
+
+### REVOLUTIONARY WAR
+war_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 999
+			using_war_goal = {
+				type = wtp_wg_revolutionary_war
+				owner = attacker
+			}
+			attacker = {
+			}
+			defender = {
+			}
+		}
+	}
+	format = "[This.MainAttacker.GetAdj] <wtp_revolutionary_war_names>"
+}

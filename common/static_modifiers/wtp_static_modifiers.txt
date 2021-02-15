@@ -3,7 +3,7 @@ wtp_unrest_spiritualist = {
 	icon_frame = 3
 	pop_government_ethic_attraction = -0.25
 	pop_ethic_materialist_attraction_mult = -0.75
-	pop_ethic_spiritualist_attraction_mult = 1.00
+	pop_ethic_spiritualist_attraction_mult = 1
 }
 
 wtp_unrest_materialist = {
@@ -11,7 +11,7 @@ wtp_unrest_materialist = {
 	icon_frame = 3
 	pop_government_ethic_attraction = -0.25
 	pop_ethic_spiritualist_attraction_mult = -0.75
-	pop_ethic_materialist_attraction_mult = 1.00
+	pop_ethic_materialist_attraction_mult = 1
 }
 
 wtp_unrest_militarist = {
@@ -19,7 +19,7 @@ wtp_unrest_militarist = {
 	icon_frame = 3
 	pop_government_ethic_attraction = -0.25
 	pop_ethic_pacifist_attraction_mult = -0.75
-	pop_ethic_militarist_attraction_mult = 1.00
+	pop_ethic_militarist_attraction_mult = 1
 }
 
 wtp_unrest_pacifist = {
@@ -27,7 +27,7 @@ wtp_unrest_pacifist = {
 	icon_frame = 3
 	pop_government_ethic_attraction = -0.25
 	pop_ethic_militarist_attraction_mult = -0.75
-	pop_ethic_pacifist_attraction_mult = 1.00
+	pop_ethic_pacifist_attraction_mult = 1
 }
 
 wtp_unrest_xenophobe = {
@@ -35,7 +35,7 @@ wtp_unrest_xenophobe = {
 	icon_frame = 3
 	pop_government_ethic_attraction = -0.25
 	pop_ethic_xenophile_attraction_mult = -0.75
-	pop_ethic_xenophobe_attraction_mult = 1.00
+	pop_ethic_xenophobe_attraction_mult = 1
 }
 
 wtp_unrest_xenophile = {
@@ -43,7 +43,7 @@ wtp_unrest_xenophile = {
 	icon_frame = 3
 	pop_government_ethic_attraction = -0.25
 	pop_ethic_xenophobe_attraction_mult = -0.75
-	pop_ethic_xenophile_attraction_mult = 1.00
+	pop_ethic_xenophile_attraction_mult = 1
 }
 
 wtp_unrest_egalitarian = {
@@ -51,7 +51,7 @@ wtp_unrest_egalitarian = {
 	icon_frame = 3
 	pop_government_ethic_attraction = -0.25
 	pop_ethic_authoritarian_attraction_mult = -0.75
-	pop_ethic_egalitarian_attraction_mult = 1.00
+	pop_ethic_egalitarian_attraction_mult = 1
 }
 
 wtp_unrest_authoritarian = {
@@ -59,19 +59,19 @@ wtp_unrest_authoritarian = {
 	icon_frame = 3
 	pop_government_ethic_attraction = -0.25
 	pop_ethic_egalitarian_attraction_mult = -0.75
-	pop_ethic_authoritarian_attraction_mult = 1.00
+	pop_ethic_authoritarian_attraction_mult = 1
 }
 
 wtp_propaganda = {
-    icon = "gfx/interface/icons/planet_modifiers/pm_alien_propaganda.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_alien_propaganda.dds"
 	icon_frame = 1
-    pop_government_ethic_attraction = 0.25
-   	planet_pops_consumer_goods_upkeep_mult = 1.00
+	pop_government_ethic_attraction = 0.25
+	planet_pops_consumer_goods_upkeep_mult = 1
 }
 
 wtp_crackdown = {
-    icon = "gfx/interface/icons/planet_modifiers/pm_martial_law.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_martial_law.dds"
 	icon_frame = 1
-    pop_government_ethic_attraction = 0.25
-	pop_happiness = -0.50
+	pop_government_ethic_attraction = 0.25
+	pop_happiness = -0.5
 }

@@ -1,0 +1,628 @@
+# this = planet
+wtp_effect_grant_autonomy = {
+	log = "WTP::wtp_effect_grant_autonomy(this = [This.GetName], root = [Root.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
+	owner = {
+		save_event_target_as = wtp_mother_country
+	}
+	# release rebel country
+	wtp_effect_release = yes
+	# change relationship
+	event_target:wtp_last_rebel_country = {
+		set_subject_of = {
+			who = event_target:wtp_mother_country
+			subject_type = vassal
+		}
+		add_opinion_modifier = {
+			who = event_target:wtp_mother_country
+			modifier = wtp_opinion_granted_autonomy
+		}
+	}
+	event_target:wtp_mother_country = {
+		add_opinion_modifier = {
+			who = event_target:wtp_last_rebel_country
+			modifier = wtp_opinion_mother_country
+		}
+	}
+}
+
+# this = planet
+wtp_effect_start_war = {
+	log = "WTP::wtp_effect_start_war(this = [This.GetName], root = [Root.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
+	owner = {
+		save_event_target_as = wtp_mother_country
+	}
+	# release rebel coutnry
+	wtp_effect_release = yes
+	# change relationship
+	event_target:wtp_last_rebel_country = {
+		add_opinion_modifier = {
+			who = event_target:wtp_mother_country
+			modifier = wtp_opinion_tyrant
+		}
+	}
+	event_target:wtp_mother_country = {
+		add_opinion_modifier = {
+			who = event_target:wtp_last_rebel_country
+			modifier = wtp_opinion_rebel
+		}
+	}
+	event_target:wtp_last_rebel_country = {
+		# save rebel alliance leader for later
+		save_event_target_as = wtp_rebel_alliance_leader
+	}
+	# chain reaction
+	if = {
+		limit = {
+			event_target:wtp_mother_country = {
+				any_owned_planet = {
+					wtp_trigger_has_unrest = yes
+				}
+			}
+		}
+		# boost leader
+		event_target:wtp_last_rebel_country = {
+			add_resource = {
+				energy = 5000
+				alloys = 700
+				influence = 550
+			}
+		}
+		# release others (sector capitals preferred)
+		while = {
+			limit = {
+				event_target:wtp_mother_country = {
+					any_owned_planet = {
+						is_sector_capital = yes
+						wtp_trigger_has_unrest = yes
+					}
+				}
+			}
+			# release random rebel
+			random_owned_planet = {
+				limit = {
+					event_target:wtp_mother_country = {
+						any_owned_planet = {
+							is_sector_capital = yes
+							wtp_trigger_has_unrest = yes
+						}
+					}
+				}
+				wtp_effect_release = yes
+			}
+			event_target:wtp_mother_country = {
+				# change relationship
+				add_opinion_modifier = {
+					who = event_target:wtp_last_rebel_country
+					modifier = wtp_opinion_rebel
+				}
+			}
+			event_target:wtp_last_rebel_country = {
+				# change relationship
+				add_opinion_modifier = {
+					who = event_target:wtp_mother_country
+					modifier = wtp_opinion_tyrant
+				}
+				# join rebel alliance
+				join_alliance = {
+					who = event_target:wtp_rebel_alliance_leader
+					override_requirements = yes
+				}
+				# set_name = random # Fixes some naming issues
+			}
+		}
+		# release others (non sector capitals)
+		while = {
+			limit = {
+				event_target:wtp_mother_country = {
+					any_owned_planet = {
+						wtp_trigger_has_unrest = yes
+					}
+				}
+			}
+			# release random rebel
+			random_owned_planet = {
+				limit = {
+					event_target:wtp_mother_country = {
+						any_owned_planet = {
+							wtp_trigger_has_unrest = yes
+						}
+					}
+				}
+				wtp_effect_release = yes
+			}
+			event_target:wtp_mother_country = {
+				# change relationship
+				add_opinion_modifier = {
+					who = event_target:wtp_last_rebel_country
+					modifier = wtp_opinion_rebel
+				}
+			}
+			event_target:wtp_last_rebel_country = {
+				# change relationship
+				add_opinion_modifier = {
+					who = event_target:wtp_mother_country
+					modifier = wtp_opinion_tyrant
+				}
+				# join rebel alliance
+				join_alliance = {
+					who = event_target:wtp_rebel_alliance_leader
+					override_requirements = yes
+				}
+				# set_name = random # Fixes some naming issues
+			}
+		}
+		event_target:wtp_rebel_alliance_leader = {
+			# set leader
+			set_federation_leader = event_target:wtp_rebel_alliance_leader
+			# opinion modifiers for rebel alliance members
+			federation = {
+				every_member = {
+					federation = {
+						every_member = {
+							limit = {
+								not = {
+									is_country = prevprev
+								}
+							}
+							add_opinion_modifier = {
+								who = prevprev
+								modifier = wtp_opinion_fellow_revolutionary
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	# declare war
+	event_target:wtp_mother_country = {
+		declare_war = {
+			target = event_target:wtp_rebel_alliance_leader
+			attacker_war_goal = wtp_wg_revolutionary_war
+		}
+	}
+}
+
+@wtp_starting_minerals = 5000
+@wtp_starting_energy = 10000
+@wtp_starting_food = 1000
+@wtp_starting_alloys = 300
+@wtp_starting_influence = 200
+# this = planet
+wtp_effect_release = {
+	log = "WTP::wtp_effect_release(this = [This.GetName], root = [Root.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
+	switch = {
+		trigger = has_modifier
+		wtp_unrest_spiritualist = {
+			create_country = {
+				type = default
+				released_by_country = event_target:wtp_mother_country
+				released_from_country = event_target:wtp_mother_country
+				name_list = event_target:wtp_mother_country
+				ship_prefix = event_target:wtp_mother_country
+				species = event_target:wtp_mother_country
+				origin = origin_separatists
+				ethos = {
+					ethic = ethic_fanatic_spiritualist
+					ethic = random
+				}
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				effect = {
+					save_event_target_as = wtp_last_rebel_country
+				}
+			}
+		}
+		wtp_unrest_materialist = {
+			create_country = {
+				type = default
+				released_by_country = event_target:wtp_mother_country
+				released_from_country = event_target:wtp_mother_country
+				name_list = event_target:wtp_mother_country
+				ship_prefix = event_target:wtp_mother_country
+				species = event_target:wtp_mother_country
+				origin = origin_separatists
+				ethos = {
+					ethic = ethic_fanatic_materialist
+					ethic = random
+				}
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				effect = {
+					save_event_target_as = wtp_last_rebel_country
+				}
+			}
+		}
+		wtp_unrest_militarist = {
+			create_country = {
+				type = default
+				released_by_country = event_target:wtp_mother_country
+				released_from_country = event_target:wtp_mother_country
+				name_list = event_target:wtp_mother_country
+				ship_prefix = event_target:wtp_mother_country
+				species = event_target:wtp_mother_country
+				origin = origin_separatists
+				ethos = {
+					ethic = ethic_fanatic_militarist
+					ethic = random
+				}
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				effect = {
+					save_event_target_as = wtp_last_rebel_country
+				}
+			}
+		}
+		wtp_unrest_pacifist = {
+			create_country = {
+				type = default
+				released_by_country = event_target:wtp_mother_country
+				released_from_country = event_target:wtp_mother_country
+				name_list = event_target:wtp_mother_country
+				ship_prefix = event_target:wtp_mother_country
+				species = event_target:wtp_mother_country
+				origin = origin_separatists
+				ethos = {
+					ethic = ethic_fanatic_pacifist
+					ethic = random
+				}
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				effect = {
+					save_event_target_as = wtp_last_rebel_country
+				}
+			}
+		}
+		wtp_unrest_xenophobe = {
+			create_country = {
+				type = default
+				released_by_country = event_target:wtp_mother_country
+				released_from_country = event_target:wtp_mother_country
+				name_list = event_target:wtp_mother_country
+				ship_prefix = event_target:wtp_mother_country
+				species = event_target:wtp_mother_country
+				origin = origin_separatists
+				ethos = {
+					ethic = ethic_fanatic_xenophobe
+					ethic = random
+				}
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				effect = {
+					save_event_target_as = wtp_last_rebel_country
+				}
+			}
+		}
+		wtp_unrest_xenophile = {
+			create_country = {
+				type = default
+				released_by_country = event_target:wtp_mother_country
+				released_from_country = event_target:wtp_mother_country
+				name_list = event_target:wtp_mother_country
+				ship_prefix = event_target:wtp_mother_country
+				species = event_target:wtp_mother_country
+				origin = origin_separatists
+				ethos = {
+					ethic = ethic_fanatic_xenophile
+					ethic = random
+				}
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				effect = {
+					save_event_target_as = wtp_last_rebel_country
+				}
+			}
+		}
+		wtp_unrest_egalitarian = {
+			create_country = {
+				type = default
+				released_by_country = event_target:wtp_mother_country
+				released_from_country = event_target:wtp_mother_country
+				name_list = event_target:wtp_mother_country
+				ship_prefix = event_target:wtp_mother_country
+				species = event_target:wtp_mother_country
+				origin = origin_separatists
+				ethos = {
+					ethic = ethic_fanatic_egalitarian
+					ethic = random
+				}
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				effect = {
+					save_event_target_as = wtp_last_rebel_country
+				}
+			}
+		}
+		wtp_unrest_authoritarian = {
+			create_country = {
+				type = default
+				released_by_country = event_target:wtp_mother_country
+				released_from_country = event_target:wtp_mother_country
+				name_list = event_target:wtp_mother_country
+				ship_prefix = event_target:wtp_mother_country
+				species = event_target:wtp_mother_country
+				origin = origin_separatists
+				ethos = {
+					ethic = ethic_fanatic_egalitarian
+					ethic = random
+				}
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				effect = {
+					save_event_target_as = wtp_last_rebel_country
+				}
+			}
+		}
+	}
+	event_target:wtp_mother_country = {
+		# transfer all planets of the same sector with unrest, reset unrest
+		every_owned_planet = {
+			limit = {
+				wtp_trigger_has_unrest = yes
+				sector = {
+					is_same_value = from.sector
+				}
+			}
+			set_owner = event_target:wtp_last_rebel_country
+			wtp_effect_remove_unrest = yes
+			set_variable = {
+				which = wtp_unrest
+				value = 0
+			}
+		}
+	}
+	# transfer original planet, reset unrest, make capital
+	set_owner = event_target:wtp_last_rebel_country
+	wtp_effect_remove_unrest = yes
+	set_variable = {
+		which = wtp_unrest
+		value = 0
+	}
+	set_capital = yes
+	# setup rebel country
+	event_target:wtp_last_rebel_country = {
+		# silent comms
+		establish_communications_no_message = event_target:wtp_mother_country
+		# starting resources
+		add_resource = {
+			minerals = @wtp_starting_minerals
+			energy = @wtp_starting_energy
+			food = @wtp_starting_food
+			alloys = @wtp_starting_alloys
+			influence = @wtp_starting_influence
+		}
+		# starting leaders
+		create_starting_leaders = yes
+	}
+}
+
+# this = planet
+wtp_effect_start_unrest = {
+	log = "WTP::wtp_effect_start_unrest(this = [This.GetName], root = [Root.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
+	# remove other unrest modifiers first
+	wtp_effect_remove_unrest = yes
+	# add random unrest modifier
+	random_list = {
+		# spiritualist
+		1 = {
+			modifier = {
+				factor = 0
+				owner = {
+					OR = {
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_fanatic_spiritualist
+					}
+				}
+			}
+			owner = {
+				every_owned_planet = {
+					limit = {
+						wtp_trigger_has_unrest = no
+						sector = {
+							is_same_value = from.sector
+						}
+					}
+					add_modifier = {
+						modifier = wtp_unrest_spiritualist
+						days = -1
+					}
+				}
+			}
+		}
+		# materialist
+		1 = {
+			modifier = {
+				factor = 0
+				owner = {
+					OR = {
+						has_ethic = ethic_materialist
+						has_ethic = ethic_fanatic_materialist
+					}
+				}
+			}
+			owner = {
+				every_owned_planet = {
+					limit = {
+						wtp_trigger_has_unrest = no
+						sector = {
+							is_same_value = from.sector
+						}
+					}
+					add_modifier = {
+						modifier = wtp_unrest_materialist
+						days = -1
+					}
+				}
+			}
+		}
+		# militarist
+		1 = {
+			modifier = {
+				factor = 0
+				owner = {
+					OR = {
+						has_ethic = ethic_militarist
+						has_ethic = ethic_fanatic_militarist
+					}
+				}
+			}
+			owner = {
+				every_owned_planet = {
+					limit = {
+						wtp_trigger_has_unrest = no
+						sector = {
+							is_same_value = from.sector
+						}
+					}
+					add_modifier = {
+						modifier = wtp_unrest_militarist
+						days = -1
+					}
+				}
+			}
+		}
+		# pacifist
+		1 = {
+			modifier = {
+				factor = 0
+				owner = {
+					OR = {
+						has_ethic = ethic_pacifist
+						has_ethic = ethic_fanatic_pacifist
+					}
+				}
+			}
+			owner = {
+				every_owned_planet = {
+					limit = {
+						wtp_trigger_has_unrest = no
+						sector = {
+							is_same_value = from.sector
+						}
+					}
+					add_modifier = {
+						modifier = wtp_unrest_pacifist
+						days = -1
+					}
+				}
+			}
+		}
+		# xenophobe
+		1 = {
+			modifier = {
+				factor = 0
+				owner = {
+					OR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+					}
+				}
+			}
+			owner = {
+				every_owned_planet = {
+					limit = {
+						wtp_trigger_has_unrest = no
+						sector = {
+							is_same_value = from.sector
+						}
+					}
+					add_modifier = {
+						modifier = wtp_unrest_xenophobe
+						days = -1
+					}
+				}
+			}
+		}
+		# xenophile
+		1 = {
+			modifier = {
+				factor = 0
+				owner = {
+					OR = {
+						has_ethic = ethic_xenophile
+						has_ethic = ethic_fanatic_xenophile
+					}
+				}
+			}
+			owner = {
+				every_owned_planet = {
+					limit = {
+						wtp_trigger_has_unrest = no
+						sector = {
+							is_same_value = from.sector
+						}
+					}
+					add_modifier = {
+						modifier = wtp_unrest_xenophile
+						days = -1
+					}
+				}
+			}
+		}
+		# egalitarian
+		1 = {
+			modifier = {
+				factor = 0
+				owner = {
+					OR = {
+						has_ethic = ethic_egalitarian
+						has_ethic = ethic_fanatic_egalitarian
+					}
+				}
+			}
+			owner = {
+				every_owned_planet = {
+					limit = {
+						wtp_trigger_has_unrest = no
+						sector = {
+							is_same_value = from.sector
+						}
+					}
+					add_modifier = {
+						modifier = wtp_unrest_egalitarian
+						days = -1
+					}
+				}
+			}
+		}
+		# authoritarian
+		1 = {
+			modifier = {
+				factor = 0
+				owner = {
+					OR = {
+						has_ethic = ethic_authoritarian
+						has_ethic = ethic_fanatic_authoritarian
+					}
+				}
+			}
+			owner = {
+				every_owned_planet = {
+					limit = {
+						wtp_trigger_has_unrest = no
+						sector = {
+							is_same_value = from.sector
+						}
+					}
+					add_modifier = {
+						modifier = wtp_unrest_authoritarian
+						days = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+# this = planet
+wtp_effect_remove_unrest = {
+	log = "WTP::wtp_effect_remove_unrest(this = [This.GetName], root = [Root.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
+	remove_modifier = wtp_unrest_spiritualist
+	remove_modifier = wtp_unrest_materialist
+	remove_modifier = wtp_unrest_militarist
+	remove_modifier = wtp_unrest_pacifist
+	remove_modifier = wtp_unrest_xenophobe
+	remove_modifier = wtp_unrest_xenophile
+	remove_modifier = wtp_unrest_egalitarian
+	remove_modifier = wtp_unrest_authoritarian
+}

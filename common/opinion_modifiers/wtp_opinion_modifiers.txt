@@ -1,0 +1,44 @@
+wtp_opinion_mother_country = {
+	opinion = {
+		base = 100
+	}
+	decay = {
+		base = -1
+	}
+}
+
+wtp_opinion_granted_autonomy = {
+	opinion = {
+		base = 100
+	}
+	decay = {
+		base = -1
+	}
+}
+
+wtp_opinion_rebel = {
+	opinion = {
+		base = -100
+	}
+	decay = {
+		base = 1
+	}
+}
+
+wtp_opinion_tyrant = {
+	opinion = {
+		base = -180
+	}
+	decay = {
+		base = 3
+	}
+}
+
+wtp_opinion_fellow_revolutionary = {
+	opinion = {
+		base = 300
+	}
+	decay = {
+		base = -5
+	}
+}
