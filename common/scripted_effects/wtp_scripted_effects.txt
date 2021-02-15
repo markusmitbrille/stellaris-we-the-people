@@ -6,6 +6,18 @@ wtp_effect_grant_autonomy = {
 	}
 	# release rebel country
 	wtp_effect_release = yes
+	event_target:wtp_mother_country = {
+		# change relationship
+		add_opinion_modifier = {
+			who = event_target:wtp_last_rebel_country
+			modifier = wtp_opinion_mother_country
+		}
+		# nerf govenrment ethics
+		add_modifier = {
+			modifier = wtp_mod_granted_autonomy
+			years = 10
+		}
+	}
 	event_target:wtp_last_rebel_country = {
 		# make vassal
 		set_subject_of = {
@@ -22,17 +34,12 @@ wtp_effect_grant_autonomy = {
 			modifier = wtp_mod_recent_revolution
 			years = 10
 		}
-	}
-	event_target:wtp_mother_country = {
-		# change relationship
-		add_opinion_modifier = {
-			who = event_target:wtp_last_rebel_country
-			modifier = wtp_opinion_mother_country
-		}
-		# nerf govenrment ethics
-		add_modifier = {
-			modifier = wtp_mod_granted_autonomy
-			years = 10
+		# give small defense fleet
+		create_fleet_from_naval_cap = 0.4
+		random_owned_planet = {
+			last_created_fleet = {
+				set_location = prev
+			}
 		}
 	}
 }
@@ -45,14 +52,8 @@ wtp_effect_start_war = {
 	}
 	# release rebel coutnry
 	wtp_effect_release = yes
-	# change relationship
-	event_target:wtp_last_rebel_country = {
-		add_opinion_modifier = {
-			who = event_target:wtp_mother_country
-			modifier = wtp_opinion_tyrant
-		}
-	}
 	event_target:wtp_mother_country = {
+		# change relationship
 		add_opinion_modifier = {
 			who = event_target:wtp_last_rebel_country
 			modifier = wtp_opinion_rebel
@@ -61,6 +62,24 @@ wtp_effect_start_war = {
 	event_target:wtp_last_rebel_country = {
 		# save rebel alliance leader for later
 		save_event_target_as = wtp_rebel_alliance_leader
+		# give large rebel armada
+		create_fleet_from_naval_cap = 0.4
+		random_owned_planet = {
+			last_created_fleet = {
+				set_location = prev
+			}
+		}
+		create_fleet_from_naval_cap = 0.4
+		random_owned_planet = {
+			last_created_fleet = {
+				set_location = prev
+			}
+		}
+		# change relationship
+		add_opinion_modifier = {
+			who = event_target:wtp_mother_country
+			modifier = wtp_opinion_tyrant
+		}
 	}
 	# chain reaction
 	if = {
@@ -71,8 +90,7 @@ wtp_effect_start_war = {
 				}
 			}
 		}
-		# boost leader
-		event_target:wtp_last_rebel_country = {
+		event_target:wtp_rebel_alliance_leader = {
 			# additional resources
 			add_resource = {
 				energy = 5000
@@ -115,6 +133,19 @@ wtp_effect_start_war = {
 				}
 			}
 			event_target:wtp_last_rebel_country = {
+				# give sizable support fleet
+				create_fleet_from_naval_cap = 0.2
+				random_owned_planet = {
+					last_created_fleet = {
+						set_location = prev
+					}
+				}
+				create_fleet_from_naval_cap = 0.2
+				random_owned_planet = {
+					last_created_fleet = {
+						set_location = prev
+					}
+				}
 				# change relationship
 				add_opinion_modifier = {
 					who = event_target:wtp_mother_country
@@ -161,6 +192,19 @@ wtp_effect_start_war = {
 				}
 			}
 			event_target:wtp_last_rebel_country = {
+				# give sizable support fleet
+				create_fleet_from_naval_cap = 0.2
+				random_owned_planet = {
+					last_created_fleet = {
+						set_location = prev
+					}
+				}
+				create_fleet_from_naval_cap = 0.2
+				random_owned_planet = {
+					last_created_fleet = {
+						set_location = prev
+					}
+				}
 				# change relationship
 				add_opinion_modifier = {
 					who = event_target:wtp_mother_country
@@ -222,162 +266,178 @@ wtp_effect_release = {
 	switch = {
 		trigger = has_modifier
 		wtp_mod_unrest_spiritualist = {
-			create_country = {
-				type = default
-				released_by_country = event_target:wtp_mother_country
-				released_from_country = event_target:wtp_mother_country
-				name_list = event_target:wtp_mother_country
-				ship_prefix = event_target:wtp_mother_country
-				species = event_target:wtp_mother_country
-				origin = origin_separatists
-				ethos = {
-					ethic = ethic_fanatic_spiritualist
-					ethic = random
-				}
-				ignore_initial_colony_error = yes
-				day_zero_contact = no
-				effect = {
-					save_event_target_as = wtp_last_rebel_country
+			event_target:wtp_mother_country = {
+				create_country = {
+					type = default
+					released_by_country = event_target:wtp_mother_country
+					released_from_country = event_target:wtp_mother_country
+					name_list = event_target:wtp_mother_country
+					ship_prefix = event_target:wtp_mother_country
+					species = event_target:wtp_mother_country
+					origin = origin_separatists
+					ethos = {
+						ethic = ethic_fanatic_spiritualist
+						ethic = random
+					}
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					effect = {
+						save_event_target_as = wtp_last_rebel_country
+					}
 				}
 			}
 		}
 		wtp_mod_unrest_materialist = {
-			create_country = {
-				type = default
-				released_by_country = event_target:wtp_mother_country
-				released_from_country = event_target:wtp_mother_country
-				name_list = event_target:wtp_mother_country
-				ship_prefix = event_target:wtp_mother_country
-				species = event_target:wtp_mother_country
-				origin = origin_separatists
-				ethos = {
-					ethic = ethic_fanatic_materialist
-					ethic = random
-				}
-				ignore_initial_colony_error = yes
-				day_zero_contact = no
-				effect = {
-					save_event_target_as = wtp_last_rebel_country
+			event_target:wtp_mother_country = {
+				create_country = {
+					type = default
+					released_by_country = event_target:wtp_mother_country
+					released_from_country = event_target:wtp_mother_country
+					name_list = event_target:wtp_mother_country
+					ship_prefix = event_target:wtp_mother_country
+					species = event_target:wtp_mother_country
+					origin = origin_separatists
+					ethos = {
+						ethic = ethic_fanatic_materialist
+						ethic = random
+					}
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					effect = {
+						save_event_target_as = wtp_last_rebel_country
+					}
 				}
 			}
 		}
 		wtp_mod_unrest_militarist = {
-			create_country = {
-				type = default
-				released_by_country = event_target:wtp_mother_country
-				released_from_country = event_target:wtp_mother_country
-				name_list = event_target:wtp_mother_country
-				ship_prefix = event_target:wtp_mother_country
-				species = event_target:wtp_mother_country
-				origin = origin_separatists
-				ethos = {
-					ethic = ethic_fanatic_militarist
-					ethic = random
-				}
-				ignore_initial_colony_error = yes
-				day_zero_contact = no
-				effect = {
-					save_event_target_as = wtp_last_rebel_country
+			event_target:wtp_mother_country = {
+				create_country = {
+					type = default
+					released_by_country = event_target:wtp_mother_country
+					released_from_country = event_target:wtp_mother_country
+					name_list = event_target:wtp_mother_country
+					ship_prefix = event_target:wtp_mother_country
+					species = event_target:wtp_mother_country
+					origin = origin_separatists
+					ethos = {
+						ethic = ethic_fanatic_militarist
+						ethic = random
+					}
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					effect = {
+						save_event_target_as = wtp_last_rebel_country
+					}
 				}
 			}
 		}
 		wtp_mod_unrest_pacifist = {
-			create_country = {
-				type = default
-				released_by_country = event_target:wtp_mother_country
-				released_from_country = event_target:wtp_mother_country
-				name_list = event_target:wtp_mother_country
-				ship_prefix = event_target:wtp_mother_country
-				species = event_target:wtp_mother_country
-				origin = origin_separatists
-				ethos = {
-					ethic = ethic_fanatic_pacifist
-					ethic = random
-				}
-				ignore_initial_colony_error = yes
-				day_zero_contact = no
-				effect = {
-					save_event_target_as = wtp_last_rebel_country
+			event_target:wtp_mother_country = {
+				create_country = {
+					type = default
+					released_by_country = event_target:wtp_mother_country
+					released_from_country = event_target:wtp_mother_country
+					name_list = event_target:wtp_mother_country
+					ship_prefix = event_target:wtp_mother_country
+					species = event_target:wtp_mother_country
+					origin = origin_separatists
+					ethos = {
+						ethic = ethic_fanatic_pacifist
+						ethic = random
+					}
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					effect = {
+						save_event_target_as = wtp_last_rebel_country
+					}
 				}
 			}
 		}
 		wtp_mod_unrest_xenophobe = {
-			create_country = {
-				type = default
-				released_by_country = event_target:wtp_mother_country
-				released_from_country = event_target:wtp_mother_country
-				name_list = event_target:wtp_mother_country
-				ship_prefix = event_target:wtp_mother_country
-				species = event_target:wtp_mother_country
-				origin = origin_separatists
-				ethos = {
-					ethic = ethic_fanatic_xenophobe
-					ethic = random
-				}
-				ignore_initial_colony_error = yes
-				day_zero_contact = no
-				effect = {
-					save_event_target_as = wtp_last_rebel_country
+			event_target:wtp_mother_country = {
+				create_country = {
+					type = default
+					released_by_country = event_target:wtp_mother_country
+					released_from_country = event_target:wtp_mother_country
+					name_list = event_target:wtp_mother_country
+					ship_prefix = event_target:wtp_mother_country
+					species = event_target:wtp_mother_country
+					origin = origin_separatists
+					ethos = {
+						ethic = ethic_fanatic_xenophobe
+						ethic = random
+					}
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					effect = {
+						save_event_target_as = wtp_last_rebel_country
+					}
 				}
 			}
 		}
 		wtp_mod_unrest_xenophile = {
-			create_country = {
-				type = default
-				released_by_country = event_target:wtp_mother_country
-				released_from_country = event_target:wtp_mother_country
-				name_list = event_target:wtp_mother_country
-				ship_prefix = event_target:wtp_mother_country
-				species = event_target:wtp_mother_country
-				origin = origin_separatists
-				ethos = {
-					ethic = ethic_fanatic_xenophile
-					ethic = random
-				}
-				ignore_initial_colony_error = yes
-				day_zero_contact = no
-				effect = {
-					save_event_target_as = wtp_last_rebel_country
+			event_target:wtp_mother_country = {
+				create_country = {
+					type = default
+					released_by_country = event_target:wtp_mother_country
+					released_from_country = event_target:wtp_mother_country
+					name_list = event_target:wtp_mother_country
+					ship_prefix = event_target:wtp_mother_country
+					species = event_target:wtp_mother_country
+					origin = origin_separatists
+					ethos = {
+						ethic = ethic_fanatic_xenophile
+						ethic = random
+					}
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					effect = {
+						save_event_target_as = wtp_last_rebel_country
+					}
 				}
 			}
 		}
 		wtp_mod_unrest_egalitarian = {
-			create_country = {
-				type = default
-				released_by_country = event_target:wtp_mother_country
-				released_from_country = event_target:wtp_mother_country
-				name_list = event_target:wtp_mother_country
-				ship_prefix = event_target:wtp_mother_country
-				species = event_target:wtp_mother_country
-				origin = origin_separatists
-				ethos = {
-					ethic = ethic_fanatic_egalitarian
-					ethic = random
-				}
-				ignore_initial_colony_error = yes
-				day_zero_contact = no
-				effect = {
-					save_event_target_as = wtp_last_rebel_country
+			event_target:wtp_mother_country = {
+				create_country = {
+					type = default
+					released_by_country = event_target:wtp_mother_country
+					released_from_country = event_target:wtp_mother_country
+					name_list = event_target:wtp_mother_country
+					ship_prefix = event_target:wtp_mother_country
+					species = event_target:wtp_mother_country
+					origin = origin_separatists
+					ethos = {
+						ethic = ethic_fanatic_egalitarian
+						ethic = random
+					}
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					effect = {
+						save_event_target_as = wtp_last_rebel_country
+					}
 				}
 			}
 		}
 		wtp_mod_unrest_authoritarian = {
-			create_country = {
-				type = default
-				released_by_country = event_target:wtp_mother_country
-				released_from_country = event_target:wtp_mother_country
-				name_list = event_target:wtp_mother_country
-				ship_prefix = event_target:wtp_mother_country
-				species = event_target:wtp_mother_country
-				origin = origin_separatists
-				ethos = {
-					ethic = ethic_fanatic_egalitarian
-					ethic = random
-				}
-				ignore_initial_colony_error = yes
-				day_zero_contact = no
-				effect = {
-					save_event_target_as = wtp_last_rebel_country
+			event_target:wtp_mother_country = {
+				create_country = {
+					type = default
+					released_by_country = event_target:wtp_mother_country
+					released_from_country = event_target:wtp_mother_country
+					name_list = event_target:wtp_mother_country
+					ship_prefix = event_target:wtp_mother_country
+					species = event_target:wtp_mother_country
+					origin = origin_separatists
+					ethos = {
+						ethic = ethic_fanatic_egalitarian
+						ethic = random
+					}
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					effect = {
+						save_event_target_as = wtp_last_rebel_country
+					}
 				}
 			}
 		}
