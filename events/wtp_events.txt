@@ -167,49 +167,49 @@ planet_event = {
 	}
 	desc = {
 		trigger = {
-			has_modifier = wtp_unrest_spiritualist
+			has_modifier = wtp_mod_unrest_spiritualist
 		}
 		text = wtp.2.1.desc
 	}
 	desc = {
 		trigger = {
-			has_modifier = wtp_unrest_materialist
+			has_modifier = wtp_mod_unrest_materialist
 		}
 		text = wtp.2.2.desc
 	}
 	desc = {
 		trigger = {
-			has_modifier = wtp_unrest_militarist
+			has_modifier = wtp_mod_unrest_militarist
 		}
 		text = wtp.2.3.desc
 	}
 	desc = {
 		trigger = {
-			has_modifier = wtp_unrest_pacifist
+			has_modifier = wtp_mod_unrest_pacifist
 		}
 		text = wtp.2.4.desc
 	}
 	desc = {
 		trigger = {
-			has_modifier = wtp_unrest_xenophobe
+			has_modifier = wtp_mod_unrest_xenophobe
 		}
 		text = wtp.2.5.desc
 	}
 	desc = {
 		trigger = {
-			has_modifier = wtp_unrest_xenophile
+			has_modifier = wtp_mod_unrest_xenophile
 		}
 		text = wtp.2.6.desc
 	}
 	desc = {
 		trigger = {
-			has_modifier = wtp_unrest_egalitarian
+			has_modifier = wtp_mod_unrest_egalitarian
 		}
 		text = wtp.2.7.desc
 	}
 	desc = {
 		trigger = {
-			has_modifier = wtp_unrest_authoritarian
+			has_modifier = wtp_mod_unrest_authoritarian
 		}
 		text = wtp.2.8.desc
 	}
@@ -219,14 +219,14 @@ planet_event = {
 	option = {
 		name = wtp.2.propaganda
 		add_modifier = {
-			modifier = wtp_propaganda
+			modifier = wtp_mod_propaganda
 			days = -1
 		}
 	}
 	option = {
 		name = wtp.2.crackdown
 		add_modifier = {
-			modifier = wtp_crackdown
+			modifier = wtp_mod_crackdown
 			days = -1
 		}
 	}
@@ -265,49 +265,49 @@ planet_event = {
 	}
 	desc = {
 		trigger = {
-			has_modifier = wtp_unrest_spiritualist
+			has_modifier = wtp_mod_unrest_spiritualist
 		}
 		text = wtp.4.1.desc
 	}
 	desc = {
 		trigger = {
-			has_modifier = wtp_unrest_materialist
+			has_modifier = wtp_mod_unrest_materialist
 		}
 		text = wtp.4.2.desc
 	}
 	desc = {
 		trigger = {
-			has_modifier = wtp_unrest_militarist
+			has_modifier = wtp_mod_unrest_militarist
 		}
 		text = wtp.4.3.desc
 	}
 	desc = {
 		trigger = {
-			has_modifier = wtp_unrest_pacifist
+			has_modifier = wtp_mod_unrest_pacifist
 		}
 		text = wtp.4.4.desc
 	}
 	desc = {
 		trigger = {
-			has_modifier = wtp_unrest_xenophobe
+			has_modifier = wtp_mod_unrest_xenophobe
 		}
 		text = wtp.4.5.desc
 	}
 	desc = {
 		trigger = {
-			has_modifier = wtp_unrest_xenophile
+			has_modifier = wtp_mod_unrest_xenophile
 		}
 		text = wtp.4.6.desc
 	}
 	desc = {
 		trigger = {
-			has_modifier = wtp_unrest_egalitarian
+			has_modifier = wtp_mod_unrest_egalitarian
 		}
 		text = wtp.4.7.desc
 	}
 	desc = {
 		trigger = {
-			has_modifier = wtp_unrest_authoritarian
+			has_modifier = wtp_mod_unrest_authoritarian
 		}
 		text = wtp.4.8.desc
 	}

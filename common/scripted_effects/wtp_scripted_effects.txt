@@ -193,7 +193,7 @@ wtp_effect_release = {
 	log = "WTP::wtp_effect_release(this = [This.GetName], root = [Root.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 	switch = {
 		trigger = has_modifier
-		wtp_unrest_spiritualist = {
+		wtp_mod_unrest_spiritualist = {
 			create_country = {
 				type = default
 				released_by_country = event_target:wtp_mother_country
@@ -213,7 +213,7 @@ wtp_effect_release = {
 				}
 			}
 		}
-		wtp_unrest_materialist = {
+		wtp_mod_unrest_materialist = {
 			create_country = {
 				type = default
 				released_by_country = event_target:wtp_mother_country
@@ -233,7 +233,7 @@ wtp_effect_release = {
 				}
 			}
 		}
-		wtp_unrest_militarist = {
+		wtp_mod_unrest_militarist = {
 			create_country = {
 				type = default
 				released_by_country = event_target:wtp_mother_country
@@ -253,7 +253,7 @@ wtp_effect_release = {
 				}
 			}
 		}
-		wtp_unrest_pacifist = {
+		wtp_mod_unrest_pacifist = {
 			create_country = {
 				type = default
 				released_by_country = event_target:wtp_mother_country
@@ -273,7 +273,7 @@ wtp_effect_release = {
 				}
 			}
 		}
-		wtp_unrest_xenophobe = {
+		wtp_mod_unrest_xenophobe = {
 			create_country = {
 				type = default
 				released_by_country = event_target:wtp_mother_country
@@ -293,7 +293,7 @@ wtp_effect_release = {
 				}
 			}
 		}
-		wtp_unrest_xenophile = {
+		wtp_mod_unrest_xenophile = {
 			create_country = {
 				type = default
 				released_by_country = event_target:wtp_mother_country
@@ -313,7 +313,7 @@ wtp_effect_release = {
 				}
 			}
 		}
-		wtp_unrest_egalitarian = {
+		wtp_mod_unrest_egalitarian = {
 			create_country = {
 				type = default
 				released_by_country = event_target:wtp_mother_country
@@ -333,7 +333,7 @@ wtp_effect_release = {
 				}
 			}
 		}
-		wtp_unrest_authoritarian = {
+		wtp_mod_unrest_authoritarian = {
 			create_country = {
 				type = default
 				released_by_country = event_target:wtp_mother_country
@@ -423,7 +423,7 @@ wtp_effect_start_unrest = {
 						}
 					}
 					add_modifier = {
-						modifier = wtp_unrest_spiritualist
+						modifier = wtp_mod_unrest_spiritualist
 						days = -1
 					}
 				}
@@ -449,7 +449,7 @@ wtp_effect_start_unrest = {
 						}
 					}
 					add_modifier = {
-						modifier = wtp_unrest_materialist
+						modifier = wtp_mod_unrest_materialist
 						days = -1
 					}
 				}
@@ -475,7 +475,7 @@ wtp_effect_start_unrest = {
 						}
 					}
 					add_modifier = {
-						modifier = wtp_unrest_militarist
+						modifier = wtp_mod_unrest_militarist
 						days = -1
 					}
 				}
@@ -501,7 +501,7 @@ wtp_effect_start_unrest = {
 						}
 					}
 					add_modifier = {
-						modifier = wtp_unrest_pacifist
+						modifier = wtp_mod_unrest_pacifist
 						days = -1
 					}
 				}
@@ -527,7 +527,7 @@ wtp_effect_start_unrest = {
 						}
 					}
 					add_modifier = {
-						modifier = wtp_unrest_xenophobe
+						modifier = wtp_mod_unrest_xenophobe
 						days = -1
 					}
 				}
@@ -553,7 +553,7 @@ wtp_effect_start_unrest = {
 						}
 					}
 					add_modifier = {
-						modifier = wtp_unrest_xenophile
+						modifier = wtp_mod_unrest_xenophile
 						days = -1
 					}
 				}
@@ -579,7 +579,7 @@ wtp_effect_start_unrest = {
 						}
 					}
 					add_modifier = {
-						modifier = wtp_unrest_egalitarian
+						modifier = wtp_mod_unrest_egalitarian
 						days = -1
 					}
 				}
@@ -605,7 +605,7 @@ wtp_effect_start_unrest = {
 						}
 					}
 					add_modifier = {
-						modifier = wtp_unrest_authoritarian
+						modifier = wtp_mod_unrest_authoritarian
 						days = -1
 					}
 				}
@@ -617,12 +617,12 @@ wtp_effect_start_unrest = {
 # this = planet
 wtp_effect_remove_unrest = {
 	log = "WTP::wtp_effect_remove_unrest(this = [This.GetName], root = [Root.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
-	remove_modifier = wtp_unrest_spiritualist
-	remove_modifier = wtp_unrest_materialist
-	remove_modifier = wtp_unrest_militarist
-	remove_modifier = wtp_unrest_pacifist
-	remove_modifier = wtp_unrest_xenophobe
-	remove_modifier = wtp_unrest_xenophile
-	remove_modifier = wtp_unrest_egalitarian
-	remove_modifier = wtp_unrest_authoritarian
+	remove_modifier = wtp_mod_unrest_spiritualist
+	remove_modifier = wtp_mod_unrest_materialist
+	remove_modifier = wtp_mod_unrest_militarist
+	remove_modifier = wtp_mod_unrest_pacifist
+	remove_modifier = wtp_mod_unrest_xenophobe
+	remove_modifier = wtp_mod_unrest_xenophile
+	remove_modifier = wtp_mod_unrest_egalitarian
+	remove_modifier = wtp_mod_unrest_authoritarian
 }

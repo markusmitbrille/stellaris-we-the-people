@@ -9,12 +9,12 @@ wtp_propaganda_enable = {
 			is_regular_empire = yes
 		}
 		not = {
-			has_modifier = wtp_propaganda
+			has_modifier = wtp_mod_propaganda
 		}
 	}
 	effect = {
 		add_modifier = {
-			modifier = wtp_propaganda
+			modifier = wtp_mod_propaganda
 			days = -1
 		}
 	}
@@ -36,10 +36,10 @@ wtp_propaganda_disable = {
 		category = decisions
 	}
 	potential = {
-		has_modifier = wtp_propaganda
+		has_modifier = wtp_mod_propaganda
 	}
 	effect = {
-		remove_modifier = wtp_propaganda
+		remove_modifier = wtp_mod_propaganda
 	}
 	ai_weight = {
 		weight = 1
@@ -61,12 +61,12 @@ wtp_crackdown_enable = {
 			is_regular_empire = yes
 		}
 		not = {
-			has_modifier = wtp_crackdown
+			has_modifier = wtp_mod_crackdown
 		}
 	}
 	effect = {
 		add_modifier = {
-			modifier = wtp_crackdown
+			modifier = wtp_mod_crackdown
 			days = -1
 		}
 	}
@@ -88,10 +88,10 @@ wtp_crackdown_disable = {
 		category = decisions
 	}
 	potential = {
-		has_modifier = wtp_crackdown
+		has_modifier = wtp_mod_crackdown
 	}
 	effect = {
-		remove_modifier = wtp_crackdown
+		remove_modifier = wtp_mod_crackdown
 	}
 	ai_weight = {
 		weight = 1
