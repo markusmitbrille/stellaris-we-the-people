@@ -26,6 +26,27 @@ wtp_propaganda_enable = {
 				wtp_trigger_has_unrest = yes
 			}
 		}
+		modifier = {
+			factor = 0
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_pacifist
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			owner = {
+				has_ethic = ethic_fanatic_authoritarian
+			}
+		}
+		modifier = {
+			factor = 5
+			owner = {
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
 	}
 }
 
@@ -42,7 +63,7 @@ wtp_propaganda_disable = {
 		remove_modifier = wtp_mod_propaganda
 	}
 	ai_weight = {
-		weight = 1
+		weight = 100
 		modifier = {
 			factor = 0
 			wtp_trigger_has_unrest = yes
@@ -78,6 +99,27 @@ wtp_crackdown_enable = {
 				wtp_trigger_has_unrest = yes
 			}
 		}
+		modifier = {
+			factor = 0
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_pacifist
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			owner = {
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+		modifier = {
+			factor = 5
+			owner = {
+				has_ethic = ethic_fanatic_authoritarian
+			}
+		}
 	}
 }
 
@@ -94,7 +136,7 @@ wtp_crackdown_disable = {
 		remove_modifier = wtp_mod_crackdown
 	}
 	ai_weight = {
-		weight = 1
+		weight = 100
 		modifier = {
 			factor = 0
 			wtp_trigger_has_unrest = yes
