@@ -6,7 +6,6 @@ Maybe have one rebellion clock variable per planet and increase it every month b
 
 TODO:
 + Option for playing as the rebel on ultimatum event
-+ Prevent rebellions after one broke out recently
 + Massive government ethics attraction for rebel empires
 + Expand upon decisions for propaganda/crackdown enabling/disabling
 + Check if icon for recent_revolution country modifier looks okay
