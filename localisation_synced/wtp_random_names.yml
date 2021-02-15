@@ -1,0 +1,9 @@
+﻿l_default:
+  wtp_revolt:0 "Revolt"
+  wtp_revolution:0 "Revolution"
+  wtp_national_revolution:0 "National Revolution"
+  wtp_revolutionary_war:0 "Revolutionary War"
+  wtp_civil_war:0 "Civil War"
+  wtp_peoples_war:0 "People's War"
+  wtp_war_of_independence:0 "War of Independence"
+  wtp_independence_war:0 "Independence War"
