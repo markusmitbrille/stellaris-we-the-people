@@ -399,4 +399,51 @@ planet_event = {
 		name = wtp.4.refuse
 		wtp_effect_start_war = yes
 	}
+	option = {
+		name = wtp.4.join
+		wtp_effect_start_war = yes
+		event_target:wtp_rebel_alliance_leader = {
+			set_player = event_target:wtp_mother_country
+		}
+	}
+}
+
+# mother country peace event
+country_event = {
+	id = wtp.5
+	is_triggered_only = yes
+	title = wtp.5.name
+	picture = GFX_evt_news_room
+	show_sound = event_announcement
+	immediate = {
+		log = "WTP::WTP.5(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
+	}
+	option = {
+		name = wtp.5.ok
+		remove_modifier = wtp_mod_revolutionary_war
+		add_modifier = {
+			modifier = wtp_mod_recent_revolution
+			years = 10
+		}
+	}
+}
+
+# rebel country peace event
+country_event = {
+	id = wtp.6
+	is_triggered_only = yes
+	title = wtp.6.name
+	picture = GFX_evt_news_room
+	show_sound = event_announcement
+	immediate = {
+		log = "WTP::WTP.6(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
+	}
+	option = {
+		name = wtp.6.ok
+		remove_modifier = wtp_mod_revolutionary_war
+		add_modifier = {
+			modifier = wtp_mod_recent_revolution
+			years = 10
+		}
+	}
 }

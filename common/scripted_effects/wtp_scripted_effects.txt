@@ -6,21 +6,33 @@ wtp_effect_grant_autonomy = {
 	}
 	# release rebel country
 	wtp_effect_release = yes
-	# change relationship
 	event_target:wtp_last_rebel_country = {
+		# make vassal
 		set_subject_of = {
 			who = event_target:wtp_mother_country
 			subject_type = vassal
 		}
+		# change relationship
 		add_opinion_modifier = {
 			who = event_target:wtp_mother_country
 			modifier = wtp_opinion_granted_autonomy
 		}
+		# boost govenrment ethics
+		add_modifier = {
+			modifier = wtp_mod_recent_revolution
+			years = 10
+		}
 	}
 	event_target:wtp_mother_country = {
+		# change relationship
 		add_opinion_modifier = {
 			who = event_target:wtp_last_rebel_country
 			modifier = wtp_opinion_mother_country
+		}
+		# nerf govenrment ethics
+		add_modifier = {
+			modifier = wtp_mod_granted_autonomy
+			years = 10
 		}
 	}
 }
@@ -61,10 +73,16 @@ wtp_effect_start_war = {
 		}
 		# boost leader
 		event_target:wtp_last_rebel_country = {
+			# additional resources
 			add_resource = {
 				energy = 5000
 				alloys = 700
 				influence = 550
+			}
+			# boost govenrment ethics
+			add_modifier = {
+				modifier = wtp_mod_revolutionary_war
+				days = -1
 			}
 		}
 		# release others (sector capitals preferred)
@@ -101,6 +119,11 @@ wtp_effect_start_war = {
 				add_opinion_modifier = {
 					who = event_target:wtp_mother_country
 					modifier = wtp_opinion_tyrant
+				}
+				# boost govenrment ethics
+				add_modifier = {
+					modifier = wtp_mod_revolutionary_war
+					days = -1
 				}
 				# join rebel alliance
 				join_alliance = {
@@ -182,8 +205,8 @@ wtp_effect_start_war = {
 		}
 		# boost govenrment ethics
 		add_modifier = {
-			modifier = wtp_mod_recent_revolution
-			years = 10
+			modifier = wtp_mod_revolutionary_war
+			days = -1
 		}
 	}
 }
@@ -398,11 +421,6 @@ wtp_effect_release = {
 		}
 		# starting leaders
 		create_starting_leaders = yes
-		# boost govenrment ethics
-		add_modifier = {
-			modifier = wtp_mod_recent_revolution
-			years = 10
-		}
 	}
 }
 

@@ -16,8 +16,14 @@
   wtp_mod_unrest_authoritarian:0 "Civil Unrest"
   wtp_mod_unrest_authoritarian_desc:0 "REPLACE_ME"
 
+  wtp_mod_revolutionary_war:0 "Revolutionary War"
+  wtp_mod_revolutionary_war_desc:0 "Lines have been drawn into the sand and a revolution has broken out."
+
   wtp_mod_recent_revolution:0 "Recent Revolution"
   wtp_mod_recent_revolution_desc:0 "A recent revolution has galvanized the national spirit of this country."
+
+  wtp_mod_granted_autonomy:0 "Granted Autonomy"
+  wtp_mod_granted_autonomy_desc:0 "Recently granted increased autonomy to a rebellious sector."
 
   wtp_mod_propaganda:0 "REPLACE_ME"
   wtp_mod_propaganda_desc:0 "REPLACE_ME"
@@ -70,6 +76,13 @@
   wtp.4.8.desc:0 "REPLACE_ME"
   wtp.4.accept:0 "REPLACE_ME"
   wtp.4.refuse:0 "REPLACE_ME"
+  wtp.4.join:0 "REPLACE_ME"
+
+  wtp.5.name:0 "Peace For Our Time"
+  wtp.5.ok:0 "REPLACE_ME"
+
+  wtp.6.name:0 "Peace For Our Time"
+  wtp.6.ok:0 "REPLACE_ME"
 
   wtp_opinion_mother_country:0 "Motherland"
   wtp_opinion_granted_autonomy:0 "Granted Autonomy"

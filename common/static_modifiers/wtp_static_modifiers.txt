@@ -76,8 +76,20 @@ wtp_mod_crackdown = {
 	pop_happiness = -0.5
 }
 
-wtp_mod_recent_revolution = {
+wtp_mod_revolutionary_war = {
 	icon = "gfx/interface/icons/modifiers/mod_pop_government_ethic_attraction.dds"
 	icon_frame = 1
 	pop_government_ethic_attraction = 2.00
+}
+
+wtp_mod_recent_revolution = {
+	icon = "gfx/interface/icons/modifiers/mod_pop_government_ethic_attraction.dds"
+	icon_frame = 1
+	pop_government_ethic_attraction = 1.00
+}
+
+wtp_mod_granted_autonomy = {
+	icon = "gfx/interface/icons/modifiers/mod_pop_government_ethic_attraction.dds"
+	icon_frame = 3
+	pop_government_ethic_attraction = -0.25
 }
