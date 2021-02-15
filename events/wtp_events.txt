@@ -295,9 +295,15 @@ planet_event = {
 	}
 	option = {
 		name = wtp.2.ok
+		ai_chance = {
+			factor = 100
+		}
 	}
 	option = {
 		name = wtp.2.propaganda
+		ai_chance = {
+			factor = 0
+		}
 		add_modifier = {
 			modifier = wtp_mod_propaganda
 			days = -1
@@ -305,6 +311,9 @@ planet_event = {
 	}
 	option = {
 		name = wtp.2.crackdown
+		ai_chance = {
+			factor = 0
+		}
 		add_modifier = {
 			modifier = wtp_mod_crackdown
 			days = -1
@@ -312,6 +321,9 @@ planet_event = {
 	}
 	option = {
 		name = wtp.2.release
+		ai_chance = {
+			factor = 0
+		}
 		wtp_effect_grant_autonomy = yes
 	}
 }
@@ -393,14 +405,75 @@ planet_event = {
 	}
 	option = {
 		name = wtp.4.accept
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				owner = {
+					OR = {
+						has_ethic = ethic_fanatic_authoritarian
+						has_ethic = ethic_fanatic_militarist
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				owner = {
+					OR = {
+						has_ethic = ethic_pacifist
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				owner = {
+					used_naval_capacity_percent < 0.5
+				}
+			}
+			modifier = {
+				factor = 5
+				owner = {
+					used_naval_capacity_percent < 0.25
+				}
+			}
+		}
 		wtp_effect_grant_autonomy = yes
 	}
 	option = {
 		name = wtp.4.refuse
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				owner = {
+					OR = {
+						has_ethic = ethic_fanatic_pacifist
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				owner = {
+					OR = {
+						has_ethic = ethic_authoritarian
+						has_ethic = ethic_militarist
+					}
+				}
+			}
+			modifier = {
+				factor = 5
+				owner = {
+					used_naval_capacity_percent > 0.75
+				}
+			}
+		}
 		wtp_effect_start_war = yes
 	}
 	option = {
 		name = wtp.4.join
+		ai_chance = {
+			factor = 0
+		}
 		wtp_effect_start_war = yes
 		event_target:wtp_rebel_alliance_leader = {
 			set_player = event_target:wtp_mother_country
