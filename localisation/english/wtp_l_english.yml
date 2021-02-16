@@ -31,21 +31,21 @@
   wtp_mod_crackdown:0 "Ideological Policing"
   wtp_mod_crackdown_desc:0 "Freedom of assembly has been revoked, propaganda officers censor every channel of information, death squads roam the streets of this world at night. No wrongthink is allowed here."
 
-  wtp_propaganda_enable:0 "Start Propaganda Campaign"
-  wtp_propaganda_enable_desc:0 "Starts a concerted effort to spread the governing ideology of our empire on this planet. Though costly, it is a less violent alternative to ideological policing and political purges."
-  wtp_propaganda_enable_effects_short:0 "Increases §YGoverning Ethics Attraction§!, but costs £consumer_goods£ §GConsumer Goods§! to maintain."
+  wtp_decision_propaganda_enable:0 "Start Propaganda Campaign"
+  wtp_decision_propaganda_enable_desc:0 "Starts a concerted effort to spread the governing ideology of our empire on this planet. Though costly, it is a less violent alternative to ideological policing and political purges."
+  wtp_decision_propaganda_enable_effects_short:0 "Increases §YGoverning Ethics Attraction§!, but costs £consumer_goods£ §GConsumer Goods§! to maintain."
 
-  wtp_propaganda_disable:0 "End Propaganda Campaign"
-  wtp_propaganda_disable_desc:0 "The propaganda efforts on this planet come to an end."
-  wtp_propaganda_disable_effects_short:0 "Ends the propaganda campaign."
+  wtp_decision_propaganda_disable:0 "End Propaganda Campaign"
+  wtp_decision_propaganda_disable_desc:0 "The propaganda efforts on this planet come to an end."
+  wtp_decision_propaganda_disable_effects_short:0 "Ends the propaganda campaign."
 
-  wtp_crackdown_enable:0 "Start Ideological Policing"
-  wtp_crackdown_enable_desc:0 "Using any means necessary, we can systematically force our way of thinking on the people of this world."
-  wtp_crackdown_enable_effects_short:0 "Increases §YGoverning Ethics Attraction§! at the cost of £happiness£ §YHappiness§!."
+  wtp_decision_crackdown_enable:0 "Start Ideological Policing"
+  wtp_decision_crackdown_enable_desc:0 "Using any means necessary, we can systematically force our way of thinking on the people of this world."
+  wtp_decision_crackdown_enable_effects_short:0 "Increases §YGoverning Ethics Attraction§! at the cost of £happiness£ §YHappiness§!."
 
-  wtp_crackdown_disable:0 "End Ideological Policing"
-  wtp_crackdown_disable_desc:0 "Immediately cancel any black operations on this planet."
-  wtp_crackdown_disable_effects_short:0 "End ideological policing."
+  wtp_decision_crackdown_disable:0 "End Ideological Policing"
+  wtp_decision_crackdown_disable_desc:0 "Immediately cancel any black operations on this planet."
+  wtp_decision_crackdown_disable_effects_short:0 "End ideological policing."
 
   wtp.2.name:0 "Civil Unrest Mounts"
   wtp.2.1.desc:0 "Civil unrest mounts on [Root.GetName]. Spiritualist."

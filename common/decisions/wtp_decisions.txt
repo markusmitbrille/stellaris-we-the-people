@@ -1,4 +1,4 @@
-wtp_propaganda_enable = {
+wtp_decision_propaganda_enable = {
 	owned_planets_only = yes
 	sound = event_radio_chatter
 	resources = {
@@ -51,7 +51,7 @@ wtp_propaganda_enable = {
 	}
 }
 
-wtp_propaganda_disable = {
+wtp_decision_propaganda_disable = {
 	owned_planets_only = yes
 	sound = event_administrative_work
 	resources = {
@@ -72,7 +72,7 @@ wtp_propaganda_disable = {
 	}
 }
 
-wtp_crackdown_enable = {
+wtp_decision_crackdown_enable = {
 	owned_planets_only = yes
 	sound = event_air_raid_siren
 	resources = {
@@ -125,7 +125,7 @@ wtp_crackdown_enable = {
 	}
 }
 
-wtp_crackdown_disable = {
+wtp_decision_crackdown_disable = {
 	owned_planets_only = yes
 	sound = event_administrative_work
 	resources = {
