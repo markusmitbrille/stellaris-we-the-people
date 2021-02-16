@@ -5,9 +5,10 @@ Rebellions will break out based on ethos divergence. When rebellions break out, 
 Maybe have one rebellion clock variable per planet and increase it every month based on ethics divergence ~~and distance to core sector~~ (not possible, I think)? Doing it per pop, which would have the advantage of taking their happiness and class into account, would probably be too slow.
 
 TODO:
++ Policy for purging political enemies
++ Maybe take faction happiness into account for ethos unrest calculation
 + Check if icon for recent_revolution country modifier looks okay
-+ Test if ethos condition works (if not, resort to less performant calculation via pops)
-+ Test if conditional event descriptions work properly (whether their condition is evaluated after immediate happened); if not, extract setup event
++ ~~Test if conditional event descriptions work properly (whether their condition is evaluated after immediate happened); if not, extract setup event~~ Seems to work!
 + Test if on_status_quo works correctly, especially regarding the from scope (check if events are fired correctly and modifiers are changed as intended)
 + Test if from, root and this refer to the things I think they do in scripted effects, especially in case of:
 
