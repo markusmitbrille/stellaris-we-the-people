@@ -10,14 +10,6 @@ TODO:
 + Check if icon for recent_revolution country modifier looks okay
 + ~~Test if conditional event descriptions work properly (whether their condition is evaluated after immediate happened); if not, extract setup event~~ Seems to work!
 + Test if on_status_quo works correctly, especially regarding the from scope (check if events are fired correctly and modifiers are changed as intended)
-+ Test if from, root and this refer to the things I think they do in scripted effects, especially in case of:
-
-```
-sector = {
-    is_same_value = from.sector
-}
-```
-
 + Test if the following is necessary after making a rebel join the rebel alliance (or even in case of singular releases):
 
 ```
