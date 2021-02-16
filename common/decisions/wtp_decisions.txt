@@ -1,5 +1,6 @@
 wtp_decision_propaganda_enable = {
 	owned_planets_only = yes
+	icon = decision_politics
 	sound = event_radio_chatter
 	resources = {
 		category = decisions
@@ -53,6 +54,7 @@ wtp_decision_propaganda_enable = {
 
 wtp_decision_propaganda_disable = {
 	owned_planets_only = yes
+	icon = decision_politics
 	sound = event_administrative_work
 	resources = {
 		category = decisions
@@ -74,6 +76,7 @@ wtp_decision_propaganda_disable = {
 
 wtp_decision_crackdown_enable = {
 	owned_planets_only = yes
+	icon = decision_crime
 	sound = event_air_raid_siren
 	resources = {
 		category = decisions
@@ -127,6 +130,7 @@ wtp_decision_crackdown_enable = {
 
 wtp_decision_crackdown_disable = {
 	owned_planets_only = yes
+	icon = decision_crime
 	sound = event_administrative_work
 	resources = {
 		category = decisions
@@ -143,5 +147,31 @@ wtp_decision_crackdown_disable = {
 			factor = 0
 			wtp_trigger_has_unrest = yes
 		}
+	}
+}
+
+wtp_decision_release = {
+	owned_planets_only = yes
+	icon = decision_deal
+	sound = event_administrative_work
+	resources = {
+		category = decisions
+	}
+	potential = {
+		owner = {
+			is_regular_empire = yes
+		}
+		wtp_trigger_has_unrest = yes
+	}
+	effect = {
+		custom_tooltip = wtp_decision_release_effects
+		hidden_effect = {
+			remove_modifier = wtp_mod_propaganda
+			remove_modifier = wtp_mod_crackdown
+			wtp_effect_grant_autonomy = yes
+		}
+	}
+	ai_weight = {
+		weight = 0
 	}
 }

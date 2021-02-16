@@ -15,3 +15,23 @@ TODO:
 ```
 set_name = random # Fixes some naming issues
 ```
+
++ Implement peace events via on actions that remove the wartime modifier, add time-limited peacetime modifiers; should look something like this (taken from wargoal):
+
+```
+from = {
+    country_event = {
+        id = wtp.5
+    }
+}
+federation = {
+    every_member = {
+        limit = {
+            has_modifier = wtp_mod_revolutionary_war
+        }
+        country_event = {
+            id = wtp.6
+        }
+    }
+}
+```

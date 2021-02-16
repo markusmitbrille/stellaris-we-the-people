@@ -22,3 +22,43 @@ on_planet_conquer = {
 		wtp.104
 	}
 }
+
+# A war has been won
+# Root = Winner Warleader
+# From = Loser Warleader
+# FromFrom = War
+on_war_won = {
+	events = {
+	}
+}
+
+# A war has been lost
+# Root = Loser Warleader
+# From = Winner Warleader
+# FromFrom = War
+on_war_lost = {
+	events = {
+	}
+}
+
+# A status quo has been signed
+# Root = Actor
+# From = Recipient
+# FromFrom = Main Attacker
+# FromFromFrom = Main Defender
+# FromFromFromFrom = War
+on_status_quo = {
+	events = {
+	}
+}
+
+# A status quo has been signed, by force
+# Root = Recipient
+# From = Actor
+# FromFrom = Main Attacker
+# FromFromFrom = Main Defender
+# FromFromFromFrom = War
+on_status_quo_forced = {
+	events = {
+	}
+}

@@ -13,23 +13,6 @@ wtp_wg_revolutionary_war = {
 	possible = {
 		always = yes
 	}
-	on_status_quo = {
-		from = {
-			country_event = {
-				id = wtp.5
-			}
-		}
-		federation = {
-			every_member = {
-				limit = {
-					has_modifier = wtp_mod_revolutionary_war
-				}
-				country_event = {
-					id = wtp.6
-				}
-			}
-		}
-	}
 	ai_weight = {
 		weight = 100
 	}
