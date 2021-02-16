@@ -263,7 +263,10 @@ planet_event = {
 		ai_chance = {
 			factor = 0
 		}
-		wtp_effect_grant_autonomy = yes
+		custom_tooltip = wtp.2.release.tooltip
+		hidden_effect = {
+			wtp_effect_grant_autonomy = yes
+		}
 	}
 }
 
@@ -281,6 +284,10 @@ planet_event = {
 	}
 	option = {
 		name = wtp.3.ok
+		hidden_effect = {
+			remove_modifier = wtp_mod_propaganda
+			remove_modifier = wtp_mod_crackdown
+		}
 	}
 }
 
@@ -376,7 +383,10 @@ planet_event = {
 				}
 			}
 		}
-		wtp_effect_grant_autonomy = yes
+		custom_tooltip = wtp.4.accept.tooltip
+		hidden_effect = {
+			wtp_effect_grant_autonomy = yes
+		}
 	}
 	option = {
 		name = wtp.4.refuse
@@ -406,16 +416,21 @@ planet_event = {
 				}
 			}
 		}
-		wtp_effect_start_war = yes
+		custom_tooltip = wtp.4.refuse.tooltip
+		hidden_effect = {
+			wtp_effect_start_war = yes
+		}
 	}
 	option = {
 		name = wtp.4.join
 		ai_chance = {
 			factor = 0
 		}
-		wtp_effect_start_war = yes
-		event_target:wtp_rebel_alliance_leader = {
-			set_player = event_target:wtp_mother_country
+		hidden_effect = {
+			wtp_effect_start_war = yes
+			event_target:wtp_rebel_alliance_leader = {
+				set_player = event_target:wtp_mother_country
+			}
 		}
 	}
 }

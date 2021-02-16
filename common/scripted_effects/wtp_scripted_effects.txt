@@ -42,6 +42,151 @@ wtp_effect_grant_autonomy = {
 			}
 		}
 	}
+	# flag core systems
+	event_target:wtp_mother_country = {
+		capital_scope = {
+			solar_system = {
+				set_star_flag = wtp_flag_core_sector
+				every_neighbor_system = {
+					limit = {
+						exists = owner
+						owner = {
+							is_country = event_target:wtp_mother_country
+						}
+					}
+					set_star_flag = wtp_flag_core_sector
+					every_neighbor_system = {
+						limit = {
+							exists = owner
+							owner = {
+								is_country = event_target:wtp_mother_country
+							}
+						}
+						set_star_flag = wtp_flag_core_sector
+						every_neighbor_system = {
+							limit = {
+								exists = owner
+								owner = {
+									is_country = event_target:wtp_mother_country
+								}
+							}
+							set_star_flag = wtp_flag_core_sector
+							every_neighbor_system = {
+								limit = {
+									exists = owner
+									owner = {
+										is_country = event_target:wtp_mother_country
+									}
+								}
+								set_star_flag = wtp_flag_core_sector
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	# transfer rebel systems
+	event_target:wtp_last_rebel_country = {
+		capital_scope = {
+			solar_system = {
+				every_neighbor_system = {
+					limit = {
+						exists = owner
+						owner = {
+							is_country = event_target:wtp_mother_country
+						}
+						NOT = {
+							any_system_planet = {
+								exists = owner
+								owner = {
+									is_country = event_target:wtp_mother_country
+								}
+							}
+						}
+						NOT = {
+							has_star_flag = wtp_flag_core_sector
+						}
+					}
+					starbase = {
+						set_owner = event_target:wtp_last_rebel_country
+					}
+					every_neighbor_system = {
+						limit = {
+							exists = owner
+							owner = {
+								is_country = event_target:wtp_mother_country
+							}
+							NOT = {
+								any_system_planet = {
+									exists = owner
+									owner = {
+										is_country = event_target:wtp_mother_country
+									}
+								}
+							}
+							NOT = {
+								has_star_flag = wtp_flag_core_sector
+							}
+						}
+						starbase = {
+							set_owner = event_target:wtp_last_rebel_country
+						}
+						every_neighbor_system = {
+							limit = {
+								exists = owner
+								owner = {
+									is_country = event_target:wtp_mother_country
+								}
+								NOT = {
+									any_system_planet = {
+										exists = owner
+										owner = {
+											is_country = event_target:wtp_mother_country
+										}
+									}
+								}
+								NOT = {
+									has_star_flag = wtp_flag_core_sector
+								}
+							}
+							starbase = {
+								set_owner = event_target:wtp_last_rebel_country
+							}
+							every_neighbor_system = {
+								limit = {
+									exists = owner
+									owner = {
+										is_country = event_target:wtp_mother_country
+									}
+									NOT = {
+										any_system_planet = {
+											exists = owner
+											owner = {
+												is_country = event_target:wtp_mother_country
+											}
+										}
+									}
+									NOT = {
+										has_star_flag = wtp_flag_core_sector
+									}
+								}
+								starbase = {
+									set_owner = event_target:wtp_last_rebel_country
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	# remove core flags
+	event_target:wtp_mother_country = {
+		every_system_within_border = {
+			remove_star_flag = wtp_flag_core_sector
+		}
+	}
 }
 
 # this = planet
@@ -443,7 +588,7 @@ wtp_effect_release = {
 		}
 	}
 	event_target:wtp_mother_country = {
-		# transfer all planets of the same sector with unrest, reset unrest
+		# transfer all sector systems with unrest
 		every_owned_planet = {
 			limit = {
 				wtp_trigger_has_unrest = yes
@@ -451,21 +596,29 @@ wtp_effect_release = {
 					is_same_value = from.sector
 				}
 			}
-			set_owner = event_target:wtp_last_rebel_country
-			wtp_effect_remove_unrest = yes
-			set_variable = {
-				which = wtp_var_unrest
-				value = 0
+			solar_system = {
+				starbase = {
+					set_owner = event_target:wtp_last_rebel_country
+				}
+				every_system_planet = {
+					limit = {
+						exists = owner
+						owner = {
+							is_country = event_target:wtp_mother_country
+						}
+					}
+					set_owner = event_target:wtp_last_rebel_country
+					set_controller = event_target:wtp_last_rebel_country
+					wtp_effect_remove_unrest = yes
+					set_variable = {
+						which = wtp_var_unrest
+						value = 0
+					}
+				}
 			}
 		}
 	}
-	# transfer original planet, reset unrest, make capital
-	set_owner = event_target:wtp_last_rebel_country
-	wtp_effect_remove_unrest = yes
-	set_variable = {
-		which = wtp_var_unrest
-		value = 0
-	}
+	# make home of rebellion capital
 	set_capital = yes
 	# setup rebel country
 	event_target:wtp_last_rebel_country = {

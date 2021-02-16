@@ -60,6 +60,7 @@
   wtp.2.propaganda:0 "Start a propaganda campaign!"
   wtp.2.crackdown:0 "Crack down on the radicals!"
   wtp.2.release:0 "Grant the entire sector increased autonomy."
+  wtp.2.release.tooltip:0 "Planets in the sector are released as a vassal country."
 
   wtp.3.name:0 "Civil Unrest Ceases"
   wtp.3.desc:0 "Demonstrations have died down and daily life has returned to normal on [Root.GetName] as civil unrest ceases. People have laid down their protest signs and returned to their regular jobs, and while some radicals still continue stirring up trouble, the silent majority no longer fosters thoughts of rebellion."
@@ -75,7 +76,9 @@
   wtp.4.7.desc:0 "REPLACE_ME"
   wtp.4.8.desc:0 "REPLACE_ME"
   wtp.4.accept:0 "We yield to their demands."
+  wtp.4.accept.tooltip:0 "Planets in the sector are released as a vassal country."
   wtp.4.refuse:0 "Preposterous! These rebels will be crushed!"
+  wtp.4.refuse.tooltip:0 "A civil war breaks out. Other planets with unrest may join in, forming a rebel alliance."
   wtp.4.join:0 "Fight them? I will join them!"
 
   wtp.5.name:0 "Peace For Our Time"
