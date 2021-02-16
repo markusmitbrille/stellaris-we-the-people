@@ -11,3 +11,33 @@ wtp_trigger_has_unrest = {
 		has_modifier = wtp_mod_unrest_authoritarian
 	}
 }
+
+# this = system
+wtp_trigger_system_is_rebellious = {
+	exists = owner
+	owner = {
+		is_country = event_target:wtp_mother_country
+	}
+	NOT = {
+		has_star_flag = wtp_flag_core_sector
+	}
+	OR = {
+		# no colonies
+		NOT = {
+			any_system_planet = {
+				exists = owner
+				owner = {
+					is_country = event_target:wtp_mother_country
+				}
+			}
+		}
+		# at least one unrest
+		any_system_planet = {
+			exists = owner
+			owner = {
+				is_country = event_target:wtp_mother_country
+			}
+			wtp_trigger_has_unrest = yes
+		}	
+	}
+}
