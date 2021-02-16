@@ -11,6 +11,7 @@ wtp_propaganda_enable = {
 		NOT = {
 			has_modifier = wtp_mod_propaganda
 		}
+		wtp_trigger_has_unrest = yes
 	}
 	effect = {
 		add_modifier = {
@@ -84,6 +85,7 @@ wtp_crackdown_enable = {
 		NOT = {
 			has_modifier = wtp_mod_crackdown
 		}
+		wtp_trigger_has_unrest = yes
 	}
 	effect = {
 		add_modifier = {
