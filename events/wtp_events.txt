@@ -10,7 +10,6 @@ country_event = {
 	trigger = {
 		is_country_type = default
 		is_regular_empire = yes
-		num_sectors > 1
 	}
 	immediate = {
 		log = "WTP::WTP.100"
@@ -22,7 +21,7 @@ country_event = {
 					}
 				}
 				set_variable = {
-					which = wtp_unrest
+					which = wtp_var_unrest
 					value = 0
 				}
 			}
@@ -50,7 +49,7 @@ country_event = {
 		every_owned_planet = {
 			wtp_effect_remove_unrest = yes
 			set_variable = {
-				which = wtp_unrest
+				which = wtp_var_unrest
 				value = 0
 			}
 		}
@@ -65,7 +64,7 @@ planet_event = {
 		log = "WTP::WTP.102"
 		wtp_effect_remove_unrest = yes
 		set_variable = {
-			which = wtp_unrest
+			which = wtp_var_unrest
 			value = 0
 		}
 	}
@@ -79,7 +78,7 @@ planet_event = {
 		log = "WTP::WTP.103"
 		wtp_effect_remove_unrest = yes
 		set_variable = {
-			which = wtp_unrest
+			which = wtp_var_unrest
 			value = @unrest_threshold_low
 		}
 	}
@@ -93,7 +92,7 @@ planet_event = {
 		log = "WTP::WTP.104"
 		wtp_effect_remove_unrest = yes
 		set_variable = {
-			which = wtp_unrest
+			which = wtp_var_unrest
 			value = @unrest_threshold_low
 		}
 	}
@@ -106,73 +105,27 @@ planet_event = {
 	is_triggered_only = yes
 	immediate = {
 		log = "WTP::WTP.1(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
-		switch = {
-			trigger = ethos
-			0.3 < {
-				subtract_variable = {
-					which = wtp_unrest
-					value = 2
-				}
-			}
-			0.4 < {
-				change_variable = {
-					which = wtp_unrest
-					value = 0.1
-				}
-			}
-			0.5 < {
-				change_variable = {
-					which = wtp_unrest
-					value = 0.2
-				}
-			}
-			0.6 < {
-				change_variable = {
-					which = wtp_unrest
-					value = 0.5
-				}
-			}
-			0.7 < {
-				change_variable = {
-					which = wtp_unrest
-					value = 0.7
-				}
-			}
-			0.8 < {
-				change_variable = {
-					which = wtp_unrest
-					value = 1
-				}
-			}
-			0.9 < {
-				change_variable = {
-					which = wtp_unrest
-					value = 1.5
-				}
-			}
-			1.0 < {
-				change_variable = {
-					which = wtp_unrest
-					value = 2
-				}
-			}
+		wtp_effect_calculate_planet_ethos = yes
+		change_variable = {
+			which = wtp_var_unrest
+			value = wtp_var_ethos
 		}
 		if = {
 			limit = {
 				check_variable = {
-					which = wtp_unrest
+					which = wtp_var_unrest
 					value < 0
 				}
 			}
 			set_variable = {
-				which = wtp_unrest
+				which = wtp_var_unrest
 				value = 0
 			}
 		}
 		if = {
 			limit = {
 				check_variable = {
-					which = wtp_unrest
+					which = wtp_var_unrest
 					value >= @unrest_threshold_high
 				}
 				NOT = {
@@ -191,7 +144,7 @@ planet_event = {
 		if = {
 			limit = {
 				check_variable = {
-					which = wtp_unrest
+					which = wtp_var_unrest
 					value <= @unrest_threshold_low
 				}
 				wtp_trigger_has_unrest = yes
@@ -203,7 +156,7 @@ planet_event = {
 		if = {
 			limit = {
 				check_variable = {
-					which = wtp_unrest
+					which = wtp_var_unrest
 					value >= @rebellion_threshold
 				}
 				wtp_trigger_has_unrest = yes
