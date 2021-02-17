@@ -12,7 +12,6 @@ war_name_parts_list = {
 	}
 }
 
-### REVOLUTIONARY WAR
 war_name_format = {
 	random_weight = {
 		factor = 0
@@ -28,5 +27,5 @@ war_name_format = {
 			}
 		}
 	}
-	format = "[This.MainAttacker.GetAdj] <wtp_revolutionary_war_names>"
+	format = "[This.MainDefender.GetAdj] <wtp_revolutionary_war_names>"
 }

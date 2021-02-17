@@ -7,15 +7,15 @@ wtp_effect_grant_autonomy = {
 	# release rebel country
 	wtp_effect_release = yes
 	event_target:wtp_mother_country = {
-		# change relationship
-		add_opinion_modifier = {
-			who = event_target:wtp_last_rebel_country
-			modifier = wtp_opinion_mother_country
-		}
 		# nerf govenrment ethics
 		add_modifier = {
 			modifier = wtp_mod_granted_autonomy
 			years = 10
+		}
+		# remove positive opinion
+		remove_opinion_modifier = {
+			who = event_target:wtp_last_rebel_country
+			modifier = opinion_we_liberated
 		}
 	}
 	# setup rebel country
@@ -25,12 +25,12 @@ wtp_effect_grant_autonomy = {
 			who = event_target:wtp_mother_country
 			subject_type = vassal
 		}
-		# change relationship
-		add_opinion_modifier = {
+		# remove negative opinion
+		remove_opinion_modifier = {
 			who = event_target:wtp_mother_country
-			modifier = wtp_opinion_granted_autonomy
+			modifier = opinion_broke_away_from
 		}
-		# boost govenrment ethics
+		# boost government ethics
 		add_modifier = {
 			modifier = wtp_mod_recent_revolution
 			years = 10
@@ -54,11 +54,13 @@ wtp_effect_start_war = {
 	# release rebel coutnry
 	wtp_effect_release = yes
 	event_target:wtp_mother_country = {
-		# change relationship
-		add_opinion_modifier = {
+		# remove positive opinion
+		remove_opinion_modifier = {
 			who = event_target:wtp_last_rebel_country
-			modifier = wtp_opinion_rebel
+			modifier = opinion_we_liberated
 		}
+		# remove truce
+		end_truce = event_target:wtp_last_rebel_country
 		# boost govenrment ethics
 		add_modifier = {
 			modifier = wtp_mod_revolutionary_war
@@ -68,11 +70,13 @@ wtp_effect_start_war = {
 	event_target:wtp_last_rebel_country = {
 		# save rebel alliance leader for later
 		save_event_target_as = wtp_rebel_alliance_leader
-		# change relationship
-		add_opinion_modifier = {
+		# remove positive opinion
+		remove_opinion_modifier = {
 			who = event_target:wtp_mother_country
-			modifier = wtp_opinion_tyrant
+			modifier = opinion_liberated_us
 		}
+		# remove truce
+		end_truce = event_target:wtp_mother_country
 		# boost govenrment ethics
 		add_modifier = {
 			modifier = wtp_mod_revolutionary_war
@@ -131,6 +135,8 @@ wtp_effect_start_war = {
 					who = event_target:wtp_last_rebel_country
 					modifier = wtp_opinion_rebel
 				}
+				# remove truce
+				end_truce = event_target:wtp_last_rebel_country
 				# setup rebel country
 				event_target:wtp_last_rebel_country = {
 					# give sizable support fleet
@@ -146,11 +152,13 @@ wtp_effect_start_war = {
 							set_location = prev
 						}
 					}
-					# change relationship
-					add_opinion_modifier = {
+					# remove positive opinion
+					remove_opinion_modifier = {
 						who = event_target:wtp_mother_country
-						modifier = wtp_opinion_tyrant
+						modifier = opinion_liberated_us
 					}
+					# remove truce
+					end_truce = event_target:wtp_mother_country
 					# boost govenrment ethics
 					add_modifier = {
 						modifier = wtp_mod_revolutionary_war
@@ -161,7 +169,8 @@ wtp_effect_start_war = {
 						who = event_target:wtp_rebel_alliance_leader
 						override_requirements = yes
 					}
-					# set_name = random # Fixes some naming issues
+					# fixes naming issues, maybe
+					set_name = random
 				}
 			}
 		}
@@ -392,6 +401,9 @@ wtp_effect_transfer_system_to_rebels = {
 			which = wtp_var_unrest
 			value = 0
 		}
+		# remove countermeasures
+		remove_modifier = wtp_mod_propaganda
+		remove_modifier = wtp_mod_crackdown
 		# transfer armies
 		every_planet_army = {
 			limit = {

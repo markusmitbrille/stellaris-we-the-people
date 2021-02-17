@@ -1,0 +1,64 @@
+federation_name_parts_list = {
+	key = "wtp_rebel_alliance_names_1"
+	parts = {
+		"Rebel" = 1
+		"Revolutionary" = 1
+	}
+}
+
+federation_name_parts_list = {
+	key = "wtp_rebel_alliance_names_2"
+	parts = {
+		"Union" = 1
+		"Alliance" = 1
+		"States" = 1
+		"Nations" = 1
+		"Federation" = 1
+		"Confederation" = 1
+	}
+}
+
+federation_name_parts_list = {
+	key = "wtp_rebel_alliance_names_3"
+	parts = {
+		"United" = 1
+		"Confederate" = 1
+		"Federated" = 1
+	}
+}
+
+federation_name_parts_list = {
+	key = "wtp_rebel_alliance_names_4"
+	parts = {
+		"States" = 1
+		"Nations" = 1
+	}
+}
+
+federation_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 999
+			leader = {
+				has_modifier = wtp_mod_revolutionary_war
+			}
+			# has_federation_flag = wtp_flag_rebel_alliance
+		}
+	}
+	format = "[This.Leader.GetAdj] <wtp_rebel_alliance_names_1> <wtp_rebel_alliance_names_2>"
+}
+
+federation_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 999
+			leader = {
+				has_modifier = wtp_mod_revolutionary_war
+			}
+			# has_federation_flag = wtp_flag_rebel_alliance
+		}
+	}
+	format = "<wtp_rebel_alliance_names_3> [This.Leader.GetAdj] <wtp_rebel_alliance_names_4>"
+}

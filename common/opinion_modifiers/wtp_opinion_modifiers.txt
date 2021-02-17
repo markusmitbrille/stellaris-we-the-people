@@ -1,21 +1,3 @@
-wtp_opinion_mother_country = {
-	opinion = {
-		base = 100
-	}
-	decay = {
-		base = -1
-	}
-}
-
-wtp_opinion_granted_autonomy = {
-	opinion = {
-		base = 100
-	}
-	decay = {
-		base = -1
-	}
-}
-
 wtp_opinion_rebel = {
 	opinion = {
 		base = -100

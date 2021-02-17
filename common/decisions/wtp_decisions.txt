@@ -166,8 +166,6 @@ wtp_decision_release = {
 	effect = {
 		custom_tooltip = wtp_decision_release_effects
 		hidden_effect = {
-			remove_modifier = wtp_mod_propaganda
-			remove_modifier = wtp_mod_crackdown
 			wtp_effect_grant_autonomy = yes
 		}
 	}

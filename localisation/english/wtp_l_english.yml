@@ -17,13 +17,13 @@
   wtp_mod_unrest_authoritarian_desc:0 "REPLACE_ME"
 
   wtp_mod_revolutionary_war:0 "Revolutionary War"
-  wtp_mod_revolutionary_war_desc:0 "Lines have been drawn into the sand and a revolution has broken out."
+  wtp_mod_revolutionary_war_desc:0 "Lines have been drawn into the sand and a revolution has broken out. While the war is on, people rally around the values our nation has been founded upon."
 
   wtp_mod_recent_revolution:0 "Recent Revolution"
   wtp_mod_recent_revolution_desc:0 "A recent revolution has galvanized the national spirit of this country."
 
   wtp_mod_granted_autonomy:0 "Granted Autonomy"
-  wtp_mod_granted_autonomy_desc:0 "Recently granted increased autonomy to a rebellious sector."
+  wtp_mod_granted_autonomy_desc:0 "Recently granted increased autonomy to a rebellious world. This has shaken the common people's confidence in our government and may incite other malcontents to revolution."
 
   wtp_mod_propaganda:0 "Propaganda Campaign"
   wtp_mod_propaganda_desc:0 "The central government has started a concerted effort to spread its on this planet."
@@ -65,7 +65,7 @@
   wtp.2.propaganda:0 "Start a propaganda campaign!"
   wtp.2.crackdown:0 "Crack down on the radicals!"
   wtp.2.release:0 "Grant them increased autonomy."
-  wtp.2.release.tooltip:0 "Release this planet and nearby systems as a vassal country."
+  wtp.2.release.tooltip:0 "Release this planet and nearby systems as a vassal country. This will shake the common people's confidence in our government and may incite other malcontents to revolution."
 
   wtp.3.name:0 "Civil Unrest Ceases"
   wtp.3.desc:0 "Demonstrations have died down and daily life has returned to normal on [Root.GetName] as civil unrest ceases. People have laid down their protest signs and returned to their regular jobs, and while some radicals still continue stirring up trouble, the silent majority no longer fosters thoughts of rebellion."
@@ -81,10 +81,11 @@
   wtp.4.7.desc:0 "REPLACE_ME"
   wtp.4.8.desc:0 "REPLACE_ME"
   wtp.4.accept:0 "We yield to their demands."
-  wtp.4.accept.tooltip:0 "Release this planet and nearby systems as a vassal country."
+  wtp.4.accept.tooltip:0 "Release this planet and nearby systems as a vassal country. This will shake the common people's confidence in our government and may incite other malcontents to revolution."
   wtp.4.refuse:0 "Preposterous! These rebels will be crushed!"
   wtp.4.refuse.tooltip:0 "A civil war breaks out. Other planets with unrest may join in, forming a rebel alliance."
   wtp.4.join:0 "Fight them? I will join them!"
+  wtp.4.join.tooltip:0 "Join the rebellion and take over as their leader."
 
   wtp.5.name:0 "Peace For Our Time"
   wtp.5.ok:0 "Pesky rebels!"
@@ -92,8 +93,6 @@
   wtp.6.name:0 "Peace For Our Time"
   wtp.6.ok:0 "Damn tyrants!"
 
-  wtp_opinion_mother_country:0 "Motherland"
-  wtp_opinion_granted_autonomy:0 "Granted Autonomy"
   wtp_opinion_rebel:0 "Treacherous Rebels"
   wtp_opinion_tyrant:0 "Villainous Tyrant"
   wtp_opinion_fellow_revolutionary:0 "Fellow Revolutionary"
