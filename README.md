@@ -7,7 +7,6 @@ Maybe have one rebellion clock variable per planet and increase it every month b
 TODO:
 + Policy for purging political enemies
 + Maybe take faction happiness into account for ethos unrest calculation
-+ Check if icon for recent_revolution country modifier looks okay
 + ~~Test if conditional event descriptions work properly (whether their condition is evaluated after immediate happened); if not, extract setup event~~ Seems to work!
 + Test if on_status_quo works correctly, especially regarding the from scope (check if events are fired correctly and modifiers are changed as intended)
 + Test if the following is necessary after making a rebel join the rebel alliance (or even in case of singular releases):

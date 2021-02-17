@@ -87,11 +87,9 @@
   wtp.4.join:0 "Fight them? I will join them!"
   wtp.4.join.tooltip:0 "Join the rebellion and take over as their leader."
 
-  wtp.5.name:0 "Peace For Our Time"
-  wtp.5.ok:0 "Pesky rebels!"
-
-  wtp.6.name:0 "Peace For Our Time"
-  wtp.6.ok:0 "Damn tyrants!"
+  wtp.5.name:0 "The Revolutionary War Ends"
+  wtp.5.desc:0 "REPLACE_ME"
+  wtp.5.ok:0 "I believe it is peace for our time."
 
   wtp_opinion_rebel:0 "Treacherous Rebels"
   wtp_opinion_tyrant:0 "Villainous Tyrant"

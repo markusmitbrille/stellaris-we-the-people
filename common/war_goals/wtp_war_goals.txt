@@ -8,7 +8,7 @@ wtp_wg_revolutionary_war = {
 	war_exhaustion = 0.33
 	set_defender_wargoal = wtp_wg_revolutionary_war
 	potential = {
-		always = no		# event only
+		always = no
 	}
 	possible = {
 		always = yes

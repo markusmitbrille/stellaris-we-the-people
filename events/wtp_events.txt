@@ -98,6 +98,20 @@ planet_event = {
 	}
 }
 
+country_event = {
+	id = wtp.105
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "WTP::WTP.105"
+		every_country = {
+			country_event = {
+				id = wtp.5
+			}
+		}
+	}
+}
+
 # monthly unrest update
 planet_event = {
 	id = wtp.1
@@ -426,6 +440,7 @@ planet_event = {
 		ai_chance = {
 			factor = 0
 		}
+		custom_tooltip = wtp.4.join.tooltip
 		hidden_effect = {
 			wtp_effect_start_war = yes
 			event_target:wtp_rebel_alliance_leader = {
@@ -435,38 +450,29 @@ planet_event = {
 	}
 }
 
-# mother country peace event
 country_event = {
 	id = wtp.5
 	is_triggered_only = yes
 	title = wtp.5.name
+	desc = wtp.5.desc
 	picture = GFX_evt_news_room
 	show_sound = event_announcement
+	trigger = {
+		has_modifier = wtp_mod_revolutionary_war
+		NOT = {
+			any_war = {
+				using_war_goal = {
+					type = wtp_wg_revolutionary_war
+					owner = root
+				}
+			}
+		}
+	}
 	immediate = {
-		log = "WTP::WTP.5(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
+		log = "WTP::WTP.5"
 	}
 	option = {
 		name = wtp.5.ok
-		remove_modifier = wtp_mod_revolutionary_war
-		add_modifier = {
-			modifier = wtp_mod_recent_revolution
-			years = 10
-		}
-	}
-}
-
-# rebel country peace event
-country_event = {
-	id = wtp.6
-	is_triggered_only = yes
-	title = wtp.6.name
-	picture = GFX_evt_news_room
-	show_sound = event_announcement
-	immediate = {
-		log = "WTP::WTP.6(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
-	}
-	option = {
-		name = wtp.6.ok
 		remove_modifier = wtp_mod_revolutionary_war
 		add_modifier = {
 			modifier = wtp_mod_recent_revolution
