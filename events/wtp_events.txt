@@ -20,6 +20,7 @@ country_event = {
 						is_same_value = PREVPREV.capital_scope.sector
 					}
 				}
+				wtp_effect_remove_unrest = yes
 				set_variable = {
 					which = wtp_var_unrest
 					value = 0
@@ -112,6 +113,44 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = wtp.106
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_country_type = default
+		is_regular_empire = yes
+	}
+	immediate = {
+		log = "WTP::WTP.106"
+		every_owned_planet = {
+			limit = {
+				NOT = {
+					sector = {
+						is_same_value = PREVPREV.capital_scope.sector
+					}
+				}
+				NOT = {
+					wtp_trigger_has_unrest = yes
+				}
+			}
+			random_list = {
+				# nothing happens
+				9999 = {
+				}
+				# generate unrest
+				1 = {
+					planet_event = {
+						id = wtp.6
+						days = 2
+						random = 25
+					}
+				}
+			}
+		}
+	}
+}
+
 # monthly unrest update
 planet_event = {
 	id = wtp.1
@@ -153,6 +192,8 @@ planet_event = {
 			}
 			planet_event = {
 				id = wtp.2
+				days = 2
+				random = 25
 			}
 		}
 		if = {
@@ -165,6 +206,8 @@ planet_event = {
 			}
 			planet_event = {
 				id = wtp.3
+				days = 2
+				random = 25
 			}
 		}
 		if = {
@@ -182,6 +225,8 @@ planet_event = {
 			}
 			planet_event = {
 				id = wtp.4
+				days = 2
+				random = 25
 			}
 		}
 	}
@@ -477,6 +522,149 @@ country_event = {
 		add_modifier = {
 			modifier = wtp_mod_recent_revolution
 			years = 10
+		}
+	}
+}
+
+planet_event = {
+	id = wtp.6
+	is_triggered_only = yes
+	title = wtp.6.name
+	picture = GFX_evt_smugglers_in_bar
+	show_sound = event_public_unrest
+	immediate = {
+		log = "WTP::WTP.6"
+		wtp_effect_start_unrest = yes
+		set_variable = {
+			which = wtp_var_unrest
+			value = @unrest_threshold_high
+		}
+		every_owned_pop = {
+			wipe_pop_ethos = yes
+			planet = {
+				switch = {
+					trigger = has_modifier
+					wtp_mod_unrest_spiritualist = {
+						prev = {
+							pop_change_ethic = ethic_spiritualist
+						}
+					}
+					wtp_mod_unrest_materialist = {
+						prev = {
+							pop_change_ethic = ethic_materialist
+						}
+					}
+					wtp_mod_unrest_militarist = {
+						prev = {
+							pop_change_ethic = ethic_militarist
+						}
+					}
+					wtp_mod_unrest_pacifist = {
+						prev = {
+							pop_change_ethic = ethic_pacifist
+						}
+					}
+					wtp_mod_unrest_xenophobe = {
+						prev = {
+							pop_change_ethic = ethic_xenophobe
+						}
+					}
+					wtp_mod_unrest_xenophile = {
+						prev = {
+							pop_change_ethic = ethic_xenophile
+						}
+					}
+					wtp_mod_unrest_egalitarian = {
+						prev = {
+							pop_change_ethic = ethic_egalitarian
+						}
+					}
+					wtp_mod_unrest_authoritarian = {
+						prev = {
+							pop_change_ethic = ethic_authoritarian
+						}
+					}
+				}
+			}
+			force_faction_evaluation = yes
+		}
+	}
+	desc = {
+		trigger = {
+			has_modifier = wtp_mod_unrest_spiritualist
+		}
+		text = wtp.6.1.desc
+	}
+	desc = {
+		trigger = {
+			has_modifier = wtp_mod_unrest_materialist
+		}
+		text = wtp.6.2.desc
+	}
+	desc = {
+		trigger = {
+			has_modifier = wtp_mod_unrest_militarist
+		}
+		text = wtp.6.3.desc
+	}
+	desc = {
+		trigger = {
+			has_modifier = wtp_mod_unrest_pacifist
+		}
+		text = wtp.6.4.desc
+	}
+	desc = {
+		trigger = {
+			has_modifier = wtp_mod_unrest_xenophobe
+		}
+		text = wtp.6.5.desc
+	}
+	desc = {
+		trigger = {
+			has_modifier = wtp_mod_unrest_xenophile
+		}
+		text = wtp.6.6.desc
+	}
+	desc = {
+		trigger = {
+			has_modifier = wtp_mod_unrest_egalitarian
+		}
+		text = wtp.6.7.desc
+	}
+	desc = {
+		trigger = {
+			has_modifier = wtp_mod_unrest_authoritarian
+		}
+		text = wtp.6.8.desc
+	}
+	option = {
+		name = wtp.6.propaganda
+		ai_chance = {
+			factor = 0
+		}
+		add_modifier = {
+			modifier = wtp_mod_propaganda
+			days = -1
+		}
+	}
+	option = {
+		name = wtp.6.crackdown
+		ai_chance = {
+			factor = 0
+		}
+		add_modifier = {
+			modifier = wtp_mod_crackdown
+			days = -1
+		}
+	}
+	option = {
+		name = wtp.6.release
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = wtp.6.release.tooltip
+		hidden_effect = {
+			wtp_effect_grant_autonomy = yes
 		}
 	}
 }
