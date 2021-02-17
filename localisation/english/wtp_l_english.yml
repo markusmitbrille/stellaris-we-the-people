@@ -28,7 +28,7 @@
   wtp_mod_propaganda:0 "Propaganda Campaign"
   wtp_mod_propaganda_desc:0 "The central government has started a concerted effort to spread its on this planet."
 
-  wtp_mod_crackdown:0 "Ideological Policing"
+  wtp_mod_crackdown:0 "Political Purge"
   wtp_mod_crackdown_desc:0 "Freedom of assembly has been revoked, propaganda officers censor every channel of information, death squads roam the streets of this world at night. No wrongthink is allowed here."
 
   wtp_decision_propaganda_enable:0 "Start Propaganda Campaign"
@@ -39,13 +39,13 @@
   wtp_decision_propaganda_disable_desc:0 "The propaganda efforts on this planet come to an end."
   wtp_decision_propaganda_disable_effects_short:0 "Ends the propaganda campaign."
 
-  wtp_decision_crackdown_enable:0 "Start Ideological Policing"
+  wtp_decision_crackdown_enable:0 "Start Political Purge"
   wtp_decision_crackdown_enable_desc:0 "Using any means necessary, we can systematically force our way of thinking on the people of this world."
   wtp_decision_crackdown_enable_effects_short:0 "Increases §YGoverning Ethics Attraction§! at the cost of £happiness£ §YHappiness§!."
 
-  wtp_decision_crackdown_disable:0 "End Ideological Policing"
+  wtp_decision_crackdown_disable:0 "End Political Purge"
   wtp_decision_crackdown_disable_desc:0 "Immediately cancel any black operations on this planet."
-  wtp_decision_crackdown_disable_effects_short:0 "End ideological policing."
+  wtp_decision_crackdown_disable_effects_short:0 "End political purge."
 
   wtp_decision_release:0 "Grant Autonomy"
   wtp_decision_release_desc:0 "Grants this planet, as well as other malcontents in the region, increase autonomy - under our august guidance, of course."
@@ -92,14 +92,14 @@
   wtp.5.ok:0 "I believe it is peace for our time."
 
   wtp.6.name:0 "Unexpected Civil Strife"
-  wtp.6.1.desc:0 "Unexpected civil strife on [Root.GetName]. Spiritualist."
-  wtp.6.2.desc:0 "Unexpected civil strife on [Root.GetName]. Materialist."
-  wtp.6.3.desc:0 "Unexpected civil strife on [Root.GetName]. Militarist."
-  wtp.6.4.desc:0 "Unexpected civil strife on [Root.GetName]. Pacifist."
-  wtp.6.5.desc:0 "Unexpected civil strife on [Root.GetName]. Xenophobe."
-  wtp.6.6.desc:0 "Unexpected civil strife on [Root.GetName]. Xenophile."
-  wtp.6.7.desc:0 "Unexpected civil strife on [Root.GetName]. Egalitarian."
-  wtp.6.8.desc:0 "Unexpected civil strife on [Root.GetName]. Authoritarian."
+  wtp.6.1.desc:0 "Unexpected civil strife has broken out on [Root.GetName]. Spiritualist."
+  wtp.6.2.desc:0 "Unexpected civil strife has broken out on [Root.GetName]. Materialist."
+  wtp.6.3.desc:0 "Unexpected civil strife has broken out on [Root.GetName]. Militarist."
+  wtp.6.4.desc:0 "Unexpected civil strife has broken out on [Root.GetName]. Pacifist."
+  wtp.6.5.desc:0 "Unexpected civil strife has broken out on [Root.GetName]. Xenophobe."
+  wtp.6.6.desc:0 "Unexpected civil strife has broken out on [Root.GetName]. Xenophile."
+  wtp.6.7.desc:0 "Unexpected civil strife has broken out on [Root.GetName]. Egalitarian."
+  wtp.6.8.desc:0 "Unexpected civil strife has broken out on [Root.GetName]. Authoritarian."
   wtp.6.ok:0 "Unfortunate."
   wtp.6.propaganda:0 "Start a propaganda campaign!"
   wtp.6.crackdown:0 "Crack down on the radicals!"

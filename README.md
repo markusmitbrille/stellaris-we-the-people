@@ -8,29 +8,9 @@ TODO:
 + Policy for purging political enemies
 + Maybe take faction happiness into account for ethos unrest calculation
 + ~~Test if conditional event descriptions work properly (whether their condition is evaluated after immediate happened); if not, extract setup event~~ Seems to work!
-+ Test if on_status_quo works correctly, especially regarding the from scope (check if events are fired correctly and modifiers are changed as intended)
++ Test if end of war events work correctly (change modifiers)
 + Test if the following is necessary after making a rebel join the rebel alliance (or even in case of singular releases):
 
 ```
 set_name = random # Fixes some naming issues
-```
-
-+ Implement peace events via on actions that remove the wartime modifier, add time-limited peacetime modifiers; should look something like this (taken from wargoal):
-
-```
-from = {
-    country_event = {
-        id = wtp.5
-    }
-}
-federation = {
-    every_member = {
-        limit = {
-            has_modifier = wtp_mod_revolutionary_war
-        }
-        country_event = {
-            id = wtp.6
-        }
-    }
-}
 ```
