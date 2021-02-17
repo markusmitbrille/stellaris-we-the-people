@@ -567,25 +567,25 @@ wtp_effect_calculate_pop_ethos = {
 		slave = {
 			set_variable = {
 				which = wtp_var_ethos
-				value = 0.01
+				value = 0.005
 			}
 		}
 		worker = {
 			set_variable = {
 				which = wtp_var_ethos
-				value = 0.05
+				value = 0.01
 			}
 		}
 		specialist = {
 			set_variable = {
 				which = wtp_var_ethos
-				value = 0.1
+				value = 0.05
 			}
 		}
 		ruler = {
 			set_variable = {
 				which = wtp_var_ethos
-				value = 0.2
+				value = 0.1
 			}
 		}
 	}

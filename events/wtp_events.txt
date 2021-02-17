@@ -157,10 +157,38 @@ planet_event = {
 	is_triggered_only = yes
 	immediate = {
 		log = "WTP::WTP.1(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
+		# calculate unclamped ethos
 		wtp_effect_calculate_planet_ethos = yes
-		change_variable = {
-			which = wtp_var_unrest
-			value = wtp_var_ethos
+		# change unrest by clamped ethos
+		if = {
+			limit = {
+				check_variable = {
+					which = wtp_var_ethos
+					value < -1
+				}
+			}
+			change_variable = {
+				which = wtp_var_unrest
+				value = -1
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = wtp_var_ethos
+					value > 1
+				}
+			}
+			change_variable = {
+				which = wtp_var_unrest
+				value = 1
+			}
+		}
+		else = {
+			change_variable = {
+				which = wtp_var_unrest
+				value = wtp_var_ethos
+			}
 		}
 		if = {
 			limit = {
