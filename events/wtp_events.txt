@@ -1,7 +1,7 @@
 namespace = wtp
-@unrest_threshold_low = 1.2
-@unrest_threshold_high = 6
-@rebellion_threshold = 12
+@unrest_threshold_low = 12
+@unrest_threshold_high = 60
+@rebellion_threshold = 240
 country_event = {
 	id = wtp.100
 	hide_window = yes
@@ -11,7 +11,7 @@ country_event = {
 		is_regular_empire = yes
 	}
 	immediate = {
-		log = "WTP::WTP.100"
+		log = "WTP::WTP.100(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		every_owned_planet = {
 			if = {
 				limit = {
@@ -45,7 +45,7 @@ country_event = {
 		}
 	}
 	immediate = {
-		log = "WTP::WTP.101"
+		log = "WTP::WTP.101(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		every_owned_planet = {
 			wtp_effect_remove_unrest = yes
 			set_variable = {
@@ -61,7 +61,7 @@ planet_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		log = "WTP::WTP.102"
+		log = "WTP::WTP.102(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		wtp_effect_remove_unrest = yes
 		set_variable = {
 			which = wtp_var_unrest
@@ -75,7 +75,7 @@ planet_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		log = "WTP::WTP.103"
+		log = "WTP::WTP.103(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		wtp_effect_remove_unrest = yes
 		set_variable = {
 			which = wtp_var_unrest
@@ -89,25 +89,11 @@ planet_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		log = "WTP::WTP.104"
+		log = "WTP::WTP.104(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		wtp_effect_remove_unrest = yes
 		set_variable = {
 			which = wtp_var_unrest
 			value = @unrest_threshold_low
-		}
-	}
-}
-
-country_event = {
-	id = wtp.105
-	hide_window = yes
-	is_triggered_only = yes
-	immediate = {
-		log = "WTP::WTP.105"
-		every_country = {
-			country_event = {
-				id = wtp.5
-			}
 		}
 	}
 }
@@ -121,7 +107,7 @@ country_event = {
 		is_regular_empire = yes
 	}
 	immediate = {
-		log = "WTP::WTP.106"
+		log = "WTP::WTP.106(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		every_owned_planet = {
 			limit = {
 				NOT = {
@@ -155,6 +141,14 @@ planet_event = {
 	id = wtp.1
 	hide_window = yes
 	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			owner = {
+				has_modifier = wtp_mod_revolutionary_war
+				has_modifier = wtp_mod_recent_revolution
+			}
+		}
+	}
 	immediate = {
 		log = "WTP::WTP.1(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		# calculate unclamped ethos
@@ -211,11 +205,6 @@ planet_event = {
 				NOT = {
 					wtp_trigger_has_unrest = yes
 				}
-				NOT = {
-					owner = {
-						has_modifier = wtp_mod_recent_revolution
-					}
-				}
 			}
 			planet_event = {
 				id = wtp.2
@@ -244,11 +233,6 @@ planet_event = {
 					value >= @rebellion_threshold
 				}
 				wtp_trigger_has_unrest = yes
-				NOT = {
-					owner = {
-						has_modifier = wtp_mod_recent_revolution
-					}
-				}
 			}
 			planet_event = {
 				id = wtp.4
@@ -522,37 +506,6 @@ planet_event = {
 	}
 }
 
-country_event = {
-	id = wtp.5
-	is_triggered_only = yes
-	title = wtp.5.name
-	desc = wtp.5.desc
-	picture = GFX_evt_news_room
-	show_sound = event_announcement
-	trigger = {
-		has_modifier = wtp_mod_revolutionary_war
-		NOT = {
-			any_war = {
-				using_war_goal = {
-					type = wtp_wg_revolutionary_war
-					owner = root
-				}
-			}
-		}
-	}
-	immediate = {
-		log = "WTP::WTP.5"
-	}
-	option = {
-		name = wtp.5.ok
-		remove_modifier = wtp_mod_revolutionary_war
-		add_modifier = {
-			modifier = wtp_mod_recent_revolution
-			years = 10
-		}
-	}
-}
-
 planet_event = {
 	id = wtp.6
 	is_triggered_only = yes
@@ -560,7 +513,7 @@ planet_event = {
 	picture = GFX_evt_smugglers_in_bar
 	show_sound = event_public_unrest
 	immediate = {
-		log = "WTP::WTP.6"
+		log = "WTP::WTP.6(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		wtp_effect_start_unrest = yes
 		set_variable = {
 			which = wtp_var_unrest

@@ -23,9 +23,3 @@ on_planet_conquer = {
 		wtp.104
 	}
 }
-
-on_war_ended = {
-	events = {
-		wtp.105
-	}
-}

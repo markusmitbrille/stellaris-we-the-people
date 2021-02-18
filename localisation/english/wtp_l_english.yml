@@ -17,7 +17,7 @@
   wtp_mod_unrest_authoritarian_desc:0 "REPLACE_ME"
 
   wtp_mod_revolutionary_war:0 "Revolutionary War"
-  wtp_mod_revolutionary_war_desc:0 "Lines have been drawn into the sand and a revolution has broken out. While the war is on, people rally around the values our nation has been founded upon."
+  wtp_mod_revolutionary_war_desc:0 "A revolutionary war has broken out. Lines have been drawn into the sand and people rally around the values our nation has been founded upon."
 
   wtp_mod_recent_revolution:0 "Recent Revolution"
   wtp_mod_recent_revolution_desc:0 "A recent revolution has galvanized the national spirit of this country."
@@ -86,10 +86,6 @@
   wtp.4.refuse.tooltip:0 "A civil war breaks out. Other planets with unrest may join in, forming a rebel alliance."
   wtp.4.join:0 "Fight them? I will join them!"
   wtp.4.join.tooltip:0 "Join the rebellion and take over as their leader."
-
-  wtp.5.name:0 "The Revolutionary War Ends"
-  wtp.5.desc:0 "REPLACE_ME"
-  wtp.5.ok:0 "I believe it is peace for our time."
 
   wtp.6.name:0 "Unexpected Civil Strife"
   wtp.6.1.desc:0 "Unexpected civil strife has broken out on [Root.GetName]. Spiritualist."

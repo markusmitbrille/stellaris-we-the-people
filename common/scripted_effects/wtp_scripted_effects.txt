@@ -33,7 +33,7 @@ wtp_effect_grant_autonomy = {
 		# boost government ethics
 		add_modifier = {
 			modifier = wtp_mod_recent_revolution
-			years = 10
+			years = 20
 		}
 		# give small defense fleet
 		create_fleet_from_naval_cap = 0.4
@@ -61,11 +61,6 @@ wtp_effect_start_war = {
 		}
 		# remove truce
 		end_truce = event_target:wtp_last_rebel_country
-		# boost govenrment ethics
-		add_modifier = {
-			modifier = wtp_mod_revolutionary_war
-			days = -1
-		}
 	}
 	event_target:wtp_last_rebel_country = {
 		# save rebel alliance leader for later
@@ -80,7 +75,7 @@ wtp_effect_start_war = {
 		# boost govenrment ethics
 		add_modifier = {
 			modifier = wtp_mod_revolutionary_war
-			days = -1
+			years = 20
 		}
 		# give large rebel armada
 		create_fleet_from_naval_cap = 0.4
@@ -162,7 +157,7 @@ wtp_effect_start_war = {
 					# boost govenrment ethics
 					add_modifier = {
 						modifier = wtp_mod_revolutionary_war
-						days = -1
+						years = 20
 					}
 					# join rebel alliance
 					join_alliance = {
