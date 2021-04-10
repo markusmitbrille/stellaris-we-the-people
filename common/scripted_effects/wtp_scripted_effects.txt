@@ -46,6 +46,11 @@ wtp_effect_start_war = {
 	event_target:wtp_mother_country = {
 		# remove truce
 		end_truce = event_target:wtp_last_rebel_country
+		# boost govenrment ethics
+		add_modifier = {
+			modifier = wtp_mod_revolutionary_war
+			years = 20
+		}
 	}
 	event_target:wtp_last_rebel_country = {
 		# save rebel alliance leader for later
