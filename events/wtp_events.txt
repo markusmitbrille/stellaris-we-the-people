@@ -506,6 +506,7 @@ planet_event = {
 	}
 }
 
+# start sudden unrest
 planet_event = {
 	id = wtp.6
 	is_triggered_only = yes
@@ -616,6 +617,12 @@ planet_event = {
 			has_modifier = wtp_mod_unrest_authoritarian
 		}
 		text = wtp.6.8.desc
+	}
+	option = {
+		name = wtp.6.ok
+		ai_chance = {
+			factor = 100
+		}
 	}
 	option = {
 		name = wtp.6.propaganda
