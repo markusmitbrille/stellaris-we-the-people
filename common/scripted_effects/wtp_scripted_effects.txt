@@ -176,7 +176,7 @@ wtp_effect_start_war = {
 			# mutual opinion modifiers for all rebel alliance members
 			federation = {
 				every_member = {
-					federation = {
+					prev = {
 						every_member = {
 							limit = {
 								NOT = {
