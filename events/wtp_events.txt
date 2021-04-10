@@ -208,8 +208,7 @@ planet_event = {
 			}
 			planet_event = {
 				id = wtp.2
-				days = 2
-				random = 25
+				random = 30
 			}
 		}
 		if = {
@@ -222,8 +221,7 @@ planet_event = {
 			}
 			planet_event = {
 				id = wtp.3
-				days = 2
-				random = 25
+				random = 30
 			}
 		}
 		if = {
@@ -236,8 +234,7 @@ planet_event = {
 			}
 			planet_event = {
 				id = wtp.4
-				days = 2
-				random = 25
+				random = 30
 			}
 		}
 	}
@@ -250,6 +247,15 @@ planet_event = {
 	title = wtp.2.name
 	picture = GFX_evt_smugglers_in_bar
 	show_sound = event_public_unrest
+	trigger = {
+		check_variable = {
+			which = wtp_var_unrest
+			value >= @unrest_threshold_high
+		}
+		NOT = {
+			wtp_trigger_has_unrest = yes
+		}
+	}
 	immediate = {
 		log = "WTP::WTP.2(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		wtp_effect_start_unrest = yes
@@ -348,6 +354,15 @@ planet_event = {
 	desc = wtp.3.desc
 	picture = GFX_evt_announcement
 	show_sound = event_announcement
+	trigger = {
+		limit = {
+			check_variable = {
+				which = wtp_var_unrest
+				value <= @unrest_threshold_low
+			}
+			wtp_trigger_has_unrest = yes
+		}
+	}
 	immediate = {
 		log = "WTP::WTP.3(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		wtp_effect_remove_unrest = yes
@@ -368,6 +383,13 @@ planet_event = {
 	title = wtp.4.name
 	picture = GFX_evt_burning_settlement
 	show_sound = event_planetary_riot
+	trigger = {
+		check_variable = {
+			which = wtp_var_unrest
+			value >= @rebellion_threshold
+		}
+		wtp_trigger_has_unrest = yes
+	}
 	immediate = {
 		log = "WTP::WTP.4(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 	}
