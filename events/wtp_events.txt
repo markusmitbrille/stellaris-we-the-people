@@ -123,12 +123,11 @@ country_event = {
 				# nothing happens
 				9999 = {
 				}
-				# generate unrest
+				# sudden unrest
 				1 = {
 					planet_event = {
 						id = wtp.6
-						days = 2
-						random = 25
+						random = 30
 					}
 				}
 			}
@@ -535,6 +534,16 @@ planet_event = {
 	title = wtp.6.name
 	picture = GFX_evt_smugglers_in_bar
 	show_sound = event_public_unrest
+	trigger = {
+		NOT = {
+			sector = {
+				is_same_value = PREVPREV.capital_scope.sector
+			}
+		}
+		NOT = {
+			wtp_trigger_has_unrest = yes
+		}
+	}
 	immediate = {
 		log = "WTP::WTP.6(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		wtp_effect_start_unrest = yes
