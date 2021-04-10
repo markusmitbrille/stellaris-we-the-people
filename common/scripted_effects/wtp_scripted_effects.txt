@@ -546,6 +546,7 @@ wtp_effect_calculate_planet_ethos = {
 # this = pop
 wtp_effect_calculate_pop_ethos = {
 	log = "WTP::wtp_effect_calculate_pop_ethos(this = [This.GetName], root = [Root.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
+	# pop category forms base value
 	switch = {
 		trigger = is_pop_category
 		slave = {
