@@ -12,11 +12,6 @@ wtp_effect_grant_autonomy = {
 			modifier = wtp_mod_granted_autonomy
 			years = 10
 		}
-		# remove positive opinion
-		remove_opinion_modifier = {
-			who = event_target:wtp_last_rebel_country
-			modifier = opinion_we_liberated
-		}
 	}
 	# setup rebel country
 	event_target:wtp_last_rebel_country = {
@@ -24,11 +19,6 @@ wtp_effect_grant_autonomy = {
 		set_subject_of = {
 			who = event_target:wtp_mother_country
 			subject_type = vassal
-		}
-		# remove negative opinion
-		remove_opinion_modifier = {
-			who = event_target:wtp_mother_country
-			modifier = opinion_broke_away_from
 		}
 		# boost government ethics
 		add_modifier = {
@@ -54,22 +44,12 @@ wtp_effect_start_war = {
 	# release rebel coutnry
 	wtp_effect_release = yes
 	event_target:wtp_mother_country = {
-		# remove positive opinion
-		remove_opinion_modifier = {
-			who = event_target:wtp_last_rebel_country
-			modifier = opinion_we_liberated
-		}
 		# remove truce
 		end_truce = event_target:wtp_last_rebel_country
 	}
 	event_target:wtp_last_rebel_country = {
 		# save rebel alliance leader for later
 		save_event_target_as = wtp_rebel_alliance_leader
-		# remove positive opinion
-		remove_opinion_modifier = {
-			who = event_target:wtp_mother_country
-			modifier = opinion_liberated_us
-		}
 		# remove truce
 		end_truce = event_target:wtp_mother_country
 		# boost govenrment ethics
@@ -125,11 +105,6 @@ wtp_effect_start_war = {
 					}
 					wtp_effect_release = yes
 				}
-				# change relationship
-				add_opinion_modifier = {
-					who = event_target:wtp_last_rebel_country
-					modifier = wtp_opinion_rebel
-				}
 				# remove truce
 				end_truce = event_target:wtp_last_rebel_country
 				# setup rebel country
@@ -146,11 +121,6 @@ wtp_effect_start_war = {
 						last_created_fleet = {
 							set_location = prev
 						}
-					}
-					# remove positive opinion
-					remove_opinion_modifier = {
-						who = event_target:wtp_mother_country
-						modifier = opinion_liberated_us
 					}
 					# remove truce
 					end_truce = event_target:wtp_mother_country
@@ -371,6 +341,20 @@ wtp_effect_create_rebel_country = {
 			effect = {
 				save_event_target_as = wtp_last_rebel_country
 			}
+		}
+	}
+	# remove broke away opinion
+	event_target:wtp_last_rebel_country = {
+		remove_opinion_modifier = {
+			who = event_target:wtp_mother_country
+			modifier = opinion_broke_away_from
+		}	
+	}
+	# remove liberation opinion
+	event_target:wtp_mother_country = {
+		remove_opinion_modifier = {
+			who = event_target:wtp_last_rebel_country
+			modifier = opinion_we_liberated
 		}
 	}
 }
