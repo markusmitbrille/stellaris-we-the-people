@@ -9,6 +9,7 @@ wtp_trigger_has_unrest = {
 		has_modifier = wtp_mod_unrest_xenophile
 		has_modifier = wtp_mod_unrest_egalitarian
 		has_modifier = wtp_mod_unrest_authoritarian
+		has_modifier = wtp_mod_unrest_race
 	}
 }
 
@@ -51,6 +52,18 @@ wtp_at_least_faction_pops = {
 			exists = pop_faction
 			pop_faction = {
 				is_pop_faction_type = $faction$
+			}
+		}
+	}
+}
+
+# this = planet
+wtp_at_least_non_citizen_pops = {
+	count_pops = {
+		count >= $count$
+		limit = {
+			NOT = {
+				has_citizenship_rights = yes
 			}
 		}
 	}

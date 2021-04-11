@@ -228,6 +228,15 @@ wtp_effect_release = {
 				ethic = authoritarian
 			}
 		}
+		wtp_mod_unrest_race = {
+			wtp_effect_create_rebel_country = {
+				ethic = egalitarian
+			}
+			# remember that this is a melting pot for later
+			event_target:wtp_last_rebel_country = {
+				set_country_flag = wtp_country_flag_melting_pot
+			}
+		}
 	}
 	# setup rebel country
 	event_target:wtp_last_rebel_country = {
@@ -294,7 +303,7 @@ wtp_effect_release = {
 			}
 		}
 	}
-	# transfer nearby systems
+	# transfer nearby, non-core systems
 	event_target:wtp_last_rebel_country = {
 		capital_scope = {
 			solar_system = {
@@ -319,10 +328,94 @@ wtp_effect_release = {
 			}
 		}
 	}
-	# remove core flags
+	# remove core system flags
 	event_target:wtp_mother_country = {
 		every_system_within_border = {
 			remove_star_flag = wtp_flag_core_sector
+		}
+	}
+	# melting pot
+	if = {
+		limit = {
+			event_target:wtp_last_rebel_country = {
+				has_country_flag = wtp_country_flag_melting_pot
+			}
+		}
+		# change primary species
+		event_target:wtp_last_rebel_country = {
+			random_owned_species = {
+				limit = {
+					NOT = {
+						is_same_species = event_target:wtp_mother_country.owner_species
+					}
+				}
+				event_target:wtp_last_rebel_country = {
+					change_dominant_species = {
+						species = prev
+					}
+				}
+			}
+		}
+		# deport primary species of mother country
+		event_target:wtp_mother_country = {
+			owner_species = {
+				set_population_controls = {
+					country = event_target:wtp_last_rebel_country
+					type = yes
+					cooldown = yes
+				}
+				set_migration_controls = {
+					country = event_target:wtp_last_rebel_country
+					type = yes
+					cooldown = yes
+				}
+				set_citizenship_type = {
+					country = event_target:wtp_last_rebel_country
+					type = citizenship_purge
+					cooldown = yes
+				}
+				set_purge_type = {
+					country = event_target:wtp_last_rebel_country
+					type = purge_displacement
+					cooldown = yes
+				}
+			}
+		}
+		# grant pops of all other species full citizenship
+		event_target:wtp_last_rebel_country = {
+			every_owned_species = {
+				limit = {
+					NOT = {
+						is_same_species = event_target:wtp_mother_country.owner_species
+					}
+				}
+				set_population_controls = {
+					country = event_target:wtp_last_rebel_country
+					type = no
+					cooldown = yes
+				}
+				set_migration_controls = {
+					country = event_target:wtp_last_rebel_country
+					type = no
+					cooldown = yes
+				}
+				set_citizenship_type = {
+					country = event_target:wtp_last_rebel_country
+					type = citizenship_full
+					cooldown = yes
+				}
+			}
+		}
+		# shift ethos of all other species' pops toward egalitarian
+		event_target:wtp_last_rebel_country = {
+			every_owned_pop = {
+				limit = {
+					NOT = {
+						is_same_species = event_target:wtp_mother_country.owner_species
+					}
+				}
+				shift_ethic = ethic_egalitarian
+			}
 		}
 	}
 }
@@ -2729,6 +2822,223 @@ wtp_effect_start_unrest = {
 				days = -1
 			}
 		}
+		# non-citizens
+		0 = {
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 1
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 2
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 3
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 4
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 5
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 6
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 7
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 8
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 9
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 10
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 11
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 12
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 13
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 14
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 15
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 16
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 17
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 18
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 19
+				}
+			}
+			modifier = {
+				add = 1
+				wtp_at_least_non_citizen_pops = {
+					count = 20
+				}
+			}
+			modifier = {
+				add = 5
+				wtp_at_least_non_citizen_pops = {
+					count = 25
+				}
+			}
+			modifier = {
+				add = 5
+				wtp_at_least_non_citizen_pops = {
+					count = 30
+				}
+			}
+			modifier = {
+				add = 5
+				wtp_at_least_non_citizen_pops = {
+					count = 35
+				}
+			}
+			modifier = {
+				add = 5
+				wtp_at_least_non_citizen_pops = {
+					count = 40
+				}
+			}
+			modifier = {
+				add = 5
+				wtp_at_least_non_citizen_pops = {
+					count = 45
+				}
+			}
+			modifier = {
+				add = 5
+				wtp_at_least_non_citizen_pops = {
+					count = 50
+				}
+			}
+			modifier = {
+				add = 10
+				wtp_at_least_non_citizen_pops = {
+					count = 60
+				}
+			}
+			modifier = {
+				add = 10
+				wtp_at_least_non_citizen_pops = {
+					count = 70
+				}
+			}
+			modifier = {
+				add = 10
+				wtp_at_least_non_citizen_pops = {
+					count = 80
+				}
+			}
+			modifier = {
+				add = 10
+				wtp_at_least_non_citizen_pops = {
+					count = 90
+				}
+			}
+			modifier = {
+				add = 10
+				wtp_at_least_non_citizen_pops = {
+					count = 100
+				}
+			}
+			modifier = {
+				add = 25
+				wtp_at_least_non_citizen_pops = {
+					count = 125
+				}
+			}
+			modifier = {
+				add = 25
+				wtp_at_least_non_citizen_pops = {
+					count = 150
+				}
+			}
+			modifier = {
+				add = 25
+				wtp_at_least_non_citizen_pops = {
+					count = 175
+				}
+			}
+			modifier = {
+				add = 25
+				wtp_at_least_non_citizen_pops = {
+					count = 200
+				}
+			}
+			add_modifier = {
+				modifier = wtp_mod_unrest_race
+				days = -1
+			}
+		}
 	}
 }
 
@@ -2743,6 +3053,7 @@ wtp_effect_remove_unrest = {
 	remove_modifier = wtp_mod_unrest_xenophile
 	remove_modifier = wtp_mod_unrest_egalitarian
 	remove_modifier = wtp_mod_unrest_authoritarian
+	remove_modifier = wtp_mod_unrest_race
 }
 
 # this = planet

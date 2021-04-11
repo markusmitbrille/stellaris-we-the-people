@@ -62,6 +62,14 @@ wtp_mod_unrest_authoritarian = {
 	pop_ethic_authoritarian_attraction_mult = 1
 }
 
+wtp_mod_unrest_race = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_slave_riots.dds"
+	icon_frame = 3
+	pop_government_ethic_attraction = -0.25
+	pop_ethic_xenophile_attraction_mult = -0.75
+	pop_ethic_xenophobe_attraction_mult = 1
+}
+
 wtp_mod_propaganda = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_alien_propaganda.dds"
 	icon_frame = 2

@@ -311,6 +311,12 @@ planet_event = {
 		}
 		text = wtp.2.8.desc
 	}
+	desc = {
+		trigger = {
+			has_modifier = wtp_mod_unrest_race
+		}
+		text = wtp.2.9.desc
+	}
 	option = {
 		name = wtp.2.ok
 		ai_chance = {
@@ -441,6 +447,12 @@ planet_event = {
 			has_modifier = wtp_mod_unrest_authoritarian
 		}
 		text = wtp.4.8.desc
+	}
+	desc = {
+		trigger = {
+			has_modifier = wtp_mod_unrest_race
+		}
+		text = wtp.4.9.desc
 	}
 	option = {
 		name = wtp.4.accept
