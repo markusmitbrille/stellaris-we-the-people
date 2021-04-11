@@ -405,14 +405,443 @@ wtp_effect_start_unrest = {
 	log = "WTP::wtp_effect_start_unrest(this = [This.GetName], root = [Root.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 	# remove other unrest modifiers first
 	wtp_effect_remove_unrest = yes
-	# add random unrest modifier
+	# add semi-random unrest modifier
 	random_list = {
 		# spiritualist
-		1 = {
+		0 = {
 			modifier = {
 				factor = 0
 				owner = {
 					is_spiritualist = yes
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 0
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 1
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 2
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 3
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 4
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 5
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 6
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 7
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 8
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 9
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 10
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 11
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 12
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 13
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 14
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 15
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 16
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 17
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 18
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 19
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 24
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 29
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 34
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 39
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 44
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 49
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 59
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 69
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 79
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 89
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 99
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 50
+				count_pops = {
+					count > 149
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 50
+				count_pops = {
+					count > 199
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = traditionalist
+						}
+					}
 				}
 			}
 			add_modifier = {
@@ -421,11 +850,440 @@ wtp_effect_start_unrest = {
 			}
 		}
 		# materialist
-		1 = {
+		0 = {
 			modifier = {
 				factor = 0
 				owner = {
 					is_materialist = yes
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 0
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 1
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 2
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 3
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 4
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 5
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 6
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 7
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 8
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 9
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 10
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 11
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 12
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 13
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 14
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 15
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 16
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 17
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 18
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 19
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 24
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 29
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 34
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 39
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 44
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 49
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 59
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 69
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 79
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 89
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 99
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 50
+				count_pops = {
+					count > 149
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 50
+				count_pops = {
+					count > 199
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = technologist
+						}
+					}
 				}
 			}
 			add_modifier = {
@@ -434,11 +1292,440 @@ wtp_effect_start_unrest = {
 			}
 		}
 		# militarist
-		1 = {
+		0 = {
 			modifier = {
 				factor = 0
 				owner = {
 					is_militarist = yes
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 0
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 1
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 2
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 3
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 4
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 5
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 6
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 7
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 8
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 9
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 10
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 11
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 12
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 13
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 14
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 15
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 16
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 17
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 18
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 19
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 24
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 29
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 34
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 39
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 44
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 49
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 59
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 69
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 79
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 89
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 99
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 50
+				count_pops = {
+					count > 149
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 50
+				count_pops = {
+					count > 199
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = imperialist
+						}
+					}
 				}
 			}
 			add_modifier = {
@@ -447,11 +1734,440 @@ wtp_effect_start_unrest = {
 			}
 		}
 		# pacifist
-		1 = {
+		0 = {
 			modifier = {
 				factor = 0
 				owner = {
 					is_pacifist = yes
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 0
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 1
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 2
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 3
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 4
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 5
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 6
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 7
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 8
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 9
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 10
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 11
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 12
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 13
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 14
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 15
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 16
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 17
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 18
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 19
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 24
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 29
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 34
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 39
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 44
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 49
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 59
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 69
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 79
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 89
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 99
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 50
+				count_pops = {
+					count > 149
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 50
+				count_pops = {
+					count > 199
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = prosperity
+						}
+					}
 				}
 			}
 			add_modifier = {
@@ -460,11 +2176,539 @@ wtp_effect_start_unrest = {
 			}
 		}
 		# xenophobe
-		1 = {
+		0 = {
 			modifier = {
 				factor = 0
 				owner = {
 					is_xenophobe = yes
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 0
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 1
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 2
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 3
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 4
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 5
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 6
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 7
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 8
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 9
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 10
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 11
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 12
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 13
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 14
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 15
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 16
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 17
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 18
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 19
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 24
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 29
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 34
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 39
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 44
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 49
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 59
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 69
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 79
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 89
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 99
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 50
+				count_pops = {
+					count > 149
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 50
+				count_pops = {
+					count > 199
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							OR = {
+								is_pop_faction_type = isolationist
+								is_pop_faction_type = supremacist
+							}
+						}
+					}
 				}
 			}
 			add_modifier = {
@@ -473,11 +2717,440 @@ wtp_effect_start_unrest = {
 			}
 		}
 		# xenophile
-		1 = {
+		0 = {
 			modifier = {
 				factor = 0
 				owner = {
 					is_xenophile = yes
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 0
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 1
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 2
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 3
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 4
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 5
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 6
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 7
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 8
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 9
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 10
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 11
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 12
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 13
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 14
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 15
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 16
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 17
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 18
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 19
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 24
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 29
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 34
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 39
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 44
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 49
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 59
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 69
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 79
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 89
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 99
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 50
+				count_pops = {
+					count > 149
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 50
+				count_pops = {
+					count > 199
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = xenoist
+						}
+					}
 				}
 			}
 			add_modifier = {
@@ -486,11 +3159,440 @@ wtp_effect_start_unrest = {
 			}
 		}
 		# egalitarian
-		1 = {
+		0 = {
 			modifier = {
 				factor = 0
 				owner = {
 					is_egalitarian = yes
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 0
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 1
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 2
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 3
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 4
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 5
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 6
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 7
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 8
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 9
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 10
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 11
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 12
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 13
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 14
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 15
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 16
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 17
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 18
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 19
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 24
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 29
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 34
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 39
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 44
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 49
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 59
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 69
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 79
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 89
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 99
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 50
+				count_pops = {
+					count > 149
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 50
+				count_pops = {
+					count > 199
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = progressive
+						}
+					}
 				}
 			}
 			add_modifier = {
@@ -499,11 +3601,440 @@ wtp_effect_start_unrest = {
 			}
 		}
 		# authoritarian
-		1 = {
+		0 = {
 			modifier = {
 				factor = 0
 				owner = {
 					is_authoritarian = yes
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 0
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 1
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 2
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 3
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 4
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 5
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 6
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 7
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 8
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 9
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 10
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 11
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 12
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 13
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 14
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 15
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 16
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 17
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 18
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				count_pops = {
+					count > 19
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 24
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 29
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 34
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 39
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 44
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				count_pops = {
+					count > 49
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 59
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 69
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 79
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 89
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 10
+				count_pops = {
+					count > 99
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 50
+				count_pops = {
+					count > 149
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
+				}
+			}
+			modifier = {
+				add = 50
+				count_pops = {
+					count > 199
+					limit = {
+						has_citizenship_rights = yes
+						exists = pop_faction
+						pop_faction = {
+							is_pop_faction_type = totalitarian
+						}
+					}
 				}
 			}
 			add_modifier = {
