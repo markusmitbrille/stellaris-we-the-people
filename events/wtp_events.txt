@@ -358,13 +358,11 @@ planet_event = {
 	picture = GFX_evt_announcement
 	show_sound = event_announcement
 	trigger = {
-		limit = {
-			check_variable = {
-				which = wtp_var_unrest
-				value <= @unrest_threshold_low
-			}
-			wtp_trigger_has_unrest = yes
+		check_variable = {
+			which = wtp_var_unrest
+			value <= @unrest_threshold_low
 		}
+		wtp_trigger_has_unrest = yes
 	}
 	immediate = {
 		log = "WTP::WTP.3(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
