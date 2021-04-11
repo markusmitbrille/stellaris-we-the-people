@@ -594,15 +594,9 @@ wtp_effect_calculate_pop_trend = {
 	if = {
 		limit = {
 			OR = {
-				# non-citizens, shackled robots always contribute unrest
-				AND = {
-					NOT = {
-						is_same_species = owner.owner_species
-					}
-					OR = {
-						has_citizenship_rights = no
-						is_shackled_robot = yes
-					}
+				# non-citizens always contribute unrest
+				NOT = {
+					has_citizenship_rights = yes
 				}
 				# citizens contribute unrest based on party representation
 				AND = {
