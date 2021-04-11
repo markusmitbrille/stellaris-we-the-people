@@ -38,6 +38,20 @@ wtp_trigger_system_is_rebellious = {
 				is_country = event_target:wtp_mother_country
 			}
 			wtp_trigger_has_unrest = yes
-		}	
+		}
+	}
+}
+
+# this = planet
+wtp_at_least_faction_pops = {
+	count_pops = {
+		count >= $count$
+		limit = {
+			has_citizenship_rights = yes
+			exists = pop_faction
+			pop_faction = {
+				is_pop_faction_type = $faction$
+			}
+		}
 	}
 }
