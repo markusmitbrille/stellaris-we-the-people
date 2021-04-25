@@ -4,6 +4,9 @@ wtp_decision_propaganda_enable = {
 	sound = event_radio_chatter
 	resources = {
 		category = decisions
+		cost = {
+			influence = 25
+		}
 	}
 	potential = {
 		owner = {
@@ -80,6 +83,9 @@ wtp_decision_crackdown_enable = {
 	sound = event_air_raid_siren
 	resources = {
 		category = decisions
+		cost = {
+			influence = 25
+		}
 	}
 	potential = {
 		owner = {
