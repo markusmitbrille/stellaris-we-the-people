@@ -25,10 +25,10 @@
   wtp_mod_recent_revolution_desc:0 "A recent revolution has galvanized the national spirit of this country."
 
   wtp_mod_granted_autonomy:0 "Granted Autonomy"
-  wtp_mod_granted_autonomy_desc:0 "Recently granted increased autonomy to a rebellious world. This has shaken the nation's confidence in their government and may incite other malcontents to revolution."
+  wtp_mod_granted_autonomy_desc:0 "Recently granted increased autonomy to a rebellious world."
 
   wtp_mod_propaganda:0 "Propaganda Campaign"
-  wtp_mod_propaganda_desc:0 "The central government has started a concerted effort to contain dissent and establish ideological predominance."
+  wtp_mod_propaganda_desc:0 "From small leaflets to feature-length films, the politically correct, government-approved version of the truth is never quite out of sight."
 
   wtp_mod_crackdown:0 "Political Purge"
   wtp_mod_crackdown_desc:0 "Freedom of assembly has been revoked, propaganda officers censor every channel of information, death squads roam the streets at night. No wrongthink is allowed here."
@@ -51,7 +51,7 @@
 
   wtp_decision_release:0 "Grant Autonomy"
   wtp_decision_release_desc:0 "Grants this planet, as well as other malcontents in the region, increased autonomy - under our august guidance, of course."
-  wtp_decision_release_effects: "Release this planet and nearby systems as a vassal country."
+  wtp_decision_release_effects: "Release this planet and nearby systems as a vassal country. This will drastically diminish the [Root.Owner.GetName]'s authority, which in turn may incite other malcontents to revolution."
   wtp_decision_release_effects_short:0 "Release this planet and nearby systems as a vassal country."
 
   wtp.201.name:0 "$unrest.115.name$"
@@ -76,7 +76,7 @@
   wtp.200.propaganda:0 "Start a propaganda campaign!"
   wtp.200.crackdown:0 "Crack down on the radicals!"
   wtp.200.release:0 "Grant them increased autonomy."
-  wtp.200.release.tooltip:0 "Release this planet and nearby systems as a vassal country. This will shake the nation's confidence in our government and may incite other malcontents to revolution."
+  wtp.200.release.tooltip:0 "Release this planet and nearby systems as a vassal country. This will drastically diminish the [Root.Owner.GetName]'s authority, which in turn may incite other malcontents to revolution."
 
   wtp.300.name:0 "Civil Unrest Ceases"
   wtp.300.desc:0 "Demonstrations have died down and daily life has returned to normal on [Root.GetName] as civil unrest ceases. People have laid down their protest signs and returned to their regular jobs. While some radicals still continue stirring up trouble, the silent majority no longer fosters thoughts of rebellion."
@@ -85,7 +85,7 @@
   wtp.400.name:0 "Final Ultimatum"
   wtp.400.desc:0 "\"We the people of [Root.GetName], in order to form a more perfect union, ...\" reads the start of a document that was leaked to the intergalactic press this morning. While we were trying to regain control of the message, the situation on §Y[Root.GetName]§! came to a boil: In response to the bureaucratic chaos, the local administration has issued a communiqué to the media wherein they have unilaterally declared independence and demand the immediate withdrawal of our troops from their soil. The leader of the rebellion has contacted us over a private channel to inform us that although they would prefer a peaceful resolution to this conflict, the insurgents are prepared to defend their self-proclaimed sovereignty by force."
   wtp.400.accept:0 "We yield to their demands."
-  wtp.400.accept.tooltip:0 "Release this planet and nearby systems as a vassal country. This will shake the nation's confidence in our government and may incite other malcontents to revolution."
+  wtp.400.accept.tooltip:0 "Release this planet and nearby systems as a vassal country. This will drastically diminish the [Root.Owner.GetName]'s authority, which in turn may incite other malcontents to revolution."
   wtp.400.refuse:0 "Preposterous! These rebels will be crushed!"
   wtp.400.refuse.tooltip:0 "A civil war breaks out. Other planets with unrest may join in, forming a rebel alliance."
   wtp.400.join:0 "§RFight them? I will join them!§!"
