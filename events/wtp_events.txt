@@ -1,17 +1,20 @@
 namespace = wtp
-@unrest_threshold_low = 12
-@unrest_threshold_high = 60
-@rebellion_threshold = 240
+@unrest_threshold_low = 1.2
+@unrest_threshold_high = 6
+@rebellion_threshold = 24
+# on monthly pulse
 country_event = {
-	id = wtp.100
+	id = wtp.1
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
+		# only regular empires
 		is_country_type = default
-		is_regular_empire = yes
+		NOT = {
+			has_ethic = ethic_gestalt_consciousness
+		}
 	}
 	immediate = {
-		log = "WTP::WTP.100(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		every_owned_planet = {
 			if = {
 				limit = {
@@ -20,6 +23,7 @@ country_event = {
 					}
 				}
 				wtp_effect_remove_unrest = yes
+				wtp_effect_remove_vanilla_unrest = yes
 				set_variable = {
 					which = wtp_var_unrest
 					value = 0
@@ -27,27 +31,32 @@ country_event = {
 			}
 			else = {
 				planet_event = {
-					id = wtp.1
+					id = wtp.100
+					days = 1
+					random = 29
 				}
 			}
 		}
 	}
 }
 
+# on monthly pulse
 country_event = {
-	id = wtp.101
+	id = wtp.2
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
 		NAND = {
 			is_country_type = default
-			is_regular_empire = yes
+			NOT = {
+				has_ethic = ethic_gestalt_consciousness
+			}
 		}
 	}
 	immediate = {
-		log = "WTP::WTP.101(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		every_owned_planet = {
 			wtp_effect_remove_unrest = yes
+			wtp_effect_remove_vanilla_unrest = yes
 			set_variable = {
 				which = wtp_var_unrest
 				value = 0
@@ -56,13 +65,14 @@ country_event = {
 	}
 }
 
+# on planet ownerless
 planet_event = {
-	id = wtp.102
+	id = wtp.3
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		log = "WTP::WTP.102(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		wtp_effect_remove_unrest = yes
+		wtp_effect_remove_vanilla_unrest = yes
 		set_variable = {
 			which = wtp_var_unrest
 			value = 0
@@ -70,13 +80,14 @@ planet_event = {
 	}
 }
 
+# on planet transfer
 planet_event = {
-	id = wtp.103
+	id = wtp.4
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		log = "WTP::WTP.103(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		wtp_effect_remove_unrest = yes
+		wtp_effect_remove_vanilla_unrest = yes
 		set_variable = {
 			which = wtp_var_unrest
 			value = @unrest_threshold_low
@@ -84,72 +95,30 @@ planet_event = {
 	}
 }
 
+# on planet conquer
 planet_event = {
-	id = wtp.104
+	id = wtp.5
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		log = "WTP::WTP.104(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		wtp_effect_remove_unrest = yes
+		wtp_effect_remove_vanilla_unrest = yes
 		set_variable = {
 			which = wtp_var_unrest
 			value = @unrest_threshold_low
-		}
-	}
-}
-
-country_event = {
-	id = wtp.106
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		is_country_type = default
-		is_regular_empire = yes
-	}
-	immediate = {
-		log = "WTP::WTP.106(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
-		every_owned_planet = {
-			limit = {
-				NOT = {
-					sector = {
-						is_same_value = PREVPREV.capital_scope.sector
-					}
-				}
-				NOT = {
-					wtp_trigger_has_unrest = yes
-				}
-			}
-			random_list = {
-				# nothing happens
-				9999 = {
-				}
-				# sudden unrest
-				1 = {
-					planet_event = {
-						id = wtp.6
-						random = 30
-					}
-				}
-			}
 		}
 	}
 }
 
 # monthly unrest update
 planet_event = {
-	id = wtp.1
+	id = wtp.100
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		NOR = {
-			owner = {
-				has_modifier = wtp_mod_revolutionary_war
-				has_modifier = wtp_mod_recent_revolution
-			}
-		}
+		wtp_can_have_unrest = yes
 	}
 	immediate = {
-		log = "WTP::WTP.1(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		# calculate unclamped trend
 		wtp_effect_calculate_planet_trend = yes
 		# change unrest by clamped trend
@@ -208,9 +177,9 @@ planet_event = {
 				}
 			}
 			planet_event = {
-				id = wtp.2
-				random = 30
+				id = wtp.200
 			}
+			break = yes
 		}
 		# cancel unrest
 		if = {
@@ -222,9 +191,9 @@ planet_event = {
 				wtp_trigger_has_unrest = yes
 			}
 			planet_event = {
-				id = wtp.3
-				random = 30
+				id = wtp.300
 			}
+			break = yes
 		}
 		# trigger rebellion
 		if = {
@@ -236,21 +205,20 @@ planet_event = {
 				wtp_trigger_has_unrest = yes
 			}
 			planet_event = {
-				id = wtp.4
-				random = 30
+				id = wtp.400
 			}
+			break = yes
 		}
 	}
 }
 
 # start unrest
 planet_event = {
-	id = wtp.2
+	id = wtp.200
+	hide_window = yes
 	is_triggered_only = yes
-	title = wtp.2.name
-	picture = GFX_evt_smugglers_in_bar
-	show_sound = event_public_unrest
 	trigger = {
+		wtp_can_have_unrest = yes
 		check_variable = {
 			which = wtp_var_unrest
 			value >= @unrest_threshold_high
@@ -260,71 +228,81 @@ planet_event = {
 		}
 	}
 	immediate = {
-		log = "WTP::WTP.2(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		wtp_effect_start_unrest = yes
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_spiritualist
+		switch = {
+			trigger = has_modifier
+			wtp_mod_unrest_spiritualist = {
+				planet_event = {
+					id = wtp.201
+				}
+			}
+			wtp_mod_unrest_materialist = {
+				planet_event = {
+					id = wtp.202
+				}
+			}
+			wtp_mod_unrest_militarist = {
+				planet_event = {
+					id = wtp.203
+				}
+			}
+			wtp_mod_unrest_pacifist = {
+				planet_event = {
+					id = wtp.204
+				}
+			}
+			wtp_mod_unrest_xenophobe = {
+				planet_event = {
+					id = wtp.205
+				}
+			}
+			wtp_mod_unrest_xenophile = {
+				planet_event = {
+					id = wtp.206
+				}
+			}
+			wtp_mod_unrest_egalitarian = {
+				planet_event = {
+					id = wtp.207
+				}
+			}
+			wtp_mod_unrest_authoritarian = {
+				planet_event = {
+					id = wtp.208
+				}
+			}
+			wtp_mod_unrest_race = {
+				planet_event = {
+					id = wtp.209
+				}
+			}
 		}
-		text = wtp.2.1.desc
 	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_materialist
+}
+
+planet_event = {
+	id = wtp.201
+	is_triggered_only = yes
+	title = wtp.201.name
+	desc = wtp.201.desc
+	picture = GFX_evt_conclave
+	show_sound = event_public_unrest
+	location = root
+	trigger = {
+		check_variable = {
+			which = wtp_var_unrest
+			value >= @unrest_threshold_high
 		}
-		text = wtp.2.2.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_militarist
-		}
-		text = wtp.2.3.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_pacifist
-		}
-		text = wtp.2.4.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_xenophobe
-		}
-		text = wtp.2.5.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_xenophile
-		}
-		text = wtp.2.6.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_egalitarian
-		}
-		text = wtp.2.7.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_authoritarian
-		}
-		text = wtp.2.8.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_race
-		}
-		text = wtp.2.9.desc
+		has_modifier = wtp_mod_unrest_spiritualist
 	}
 	option = {
-		name = wtp.2.ok
+		name = wtp.200.ok
 		ai_chance = {
 			factor = 100
 		}
 	}
 	option = {
-		name = wtp.2.propaganda
+		name = wtp.200.propaganda
 		ai_chance = {
 			factor = 0
 		}
@@ -334,7 +312,7 @@ planet_event = {
 		}
 	}
 	option = {
-		name = wtp.2.crackdown
+		name = wtp.200.crackdown
 		ai_chance = {
 			factor = 0
 		}
@@ -344,11 +322,415 @@ planet_event = {
 		}
 	}
 	option = {
-		name = wtp.2.release
+		name = wtp.200.release
 		ai_chance = {
 			factor = 0
 		}
-		custom_tooltip = wtp.2.release.tooltip
+		custom_tooltip = wtp.200.release.tooltip
+		hidden_effect = {
+			wtp_effect_grant_autonomy = yes
+		}
+	}
+}
+
+planet_event = {
+	id = wtp.202
+	is_triggered_only = yes
+	title = wtp.202.name
+	desc = wtp.202.desc
+	picture = GFX_evt_announcement
+	show_sound = event_public_unrest
+	location = root
+	trigger = {
+		check_variable = {
+			which = wtp_var_unrest
+			value >= @unrest_threshold_high
+		}
+		has_modifier = wtp_mod_unrest_materialist
+	}
+	option = {
+		name = wtp.200.ok
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = wtp.200.propaganda
+		ai_chance = {
+			factor = 0
+		}
+		add_modifier = {
+			modifier = wtp_mod_propaganda
+			days = -1
+		}
+	}
+	option = {
+		name = wtp.200.crackdown
+		ai_chance = {
+			factor = 0
+		}
+		add_modifier = {
+			modifier = wtp_mod_crackdown
+			days = -1
+		}
+	}
+	option = {
+		name = wtp.200.release
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = wtp.200.release.tooltip
+		hidden_effect = {
+			wtp_effect_grant_autonomy = yes
+		}
+	}
+}
+
+planet_event = {
+	id = wtp.203
+	is_triggered_only = yes
+	title = wtp.203.name
+	desc = wtp.203.desc
+	picture = GFX_evt_victorious_army
+	show_sound = event_public_unrest
+	location = root
+	trigger = {
+		check_variable = {
+			which = wtp_var_unrest
+			value >= @unrest_threshold_high
+		}
+		has_modifier = wtp_mod_unrest_militarist
+	}
+	option = {
+		name = wtp.200.ok
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = wtp.200.propaganda
+		ai_chance = {
+			factor = 0
+		}
+		add_modifier = {
+			modifier = wtp_mod_propaganda
+			days = -1
+		}
+	}
+	option = {
+		name = wtp.200.crackdown
+		ai_chance = {
+			factor = 0
+		}
+		add_modifier = {
+			modifier = wtp_mod_crackdown
+			days = -1
+		}
+	}
+	option = {
+		name = wtp.200.release
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = wtp.200.release.tooltip
+		hidden_effect = {
+			wtp_effect_grant_autonomy = yes
+		}
+	}
+}
+
+planet_event = {
+	id = wtp.204
+	is_triggered_only = yes
+	title = wtp.204.name
+	desc = wtp.204.desc
+	picture = GFX_evt_announcement
+	show_sound = event_public_unrest
+	location = root
+	trigger = {
+		check_variable = {
+			which = wtp_var_unrest
+			value >= @unrest_threshold_high
+		}
+		has_modifier = wtp_mod_unrest_pacifist
+	}
+	option = {
+		name = wtp.200.ok
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = wtp.200.propaganda
+		ai_chance = {
+			factor = 0
+		}
+		add_modifier = {
+			modifier = wtp_mod_propaganda
+			days = -1
+		}
+	}
+	option = {
+		name = wtp.200.crackdown
+		ai_chance = {
+			factor = 0
+		}
+		add_modifier = {
+			modifier = wtp_mod_crackdown
+			days = -1
+		}
+	}
+	option = {
+		name = wtp.200.release
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = wtp.200.release.tooltip
+		hidden_effect = {
+			wtp_effect_grant_autonomy = yes
+		}
+	}
+}
+
+planet_event = {
+	id = wtp.205
+	is_triggered_only = yes
+	title = wtp.205.name
+	desc = wtp.205.desc
+	picture = GFX_evt_alien_segregation
+	show_sound = event_public_unrest
+	location = root
+	trigger = {
+		check_variable = {
+			which = wtp_var_unrest
+			value >= @unrest_threshold_high
+		}
+		has_modifier = wtp_mod_unrest_xenophobe
+	}
+	option = {
+		name = wtp.200.ok
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = wtp.200.propaganda
+		ai_chance = {
+			factor = 0
+		}
+		add_modifier = {
+			modifier = wtp_mod_propaganda
+			days = -1
+		}
+	}
+	option = {
+		name = wtp.200.crackdown
+		ai_chance = {
+			factor = 0
+		}
+		add_modifier = {
+			modifier = wtp_mod_crackdown
+			days = -1
+		}
+	}
+	option = {
+		name = wtp.200.release
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = wtp.200.release.tooltip
+		hidden_effect = {
+			wtp_effect_grant_autonomy = yes
+		}
+	}
+}
+
+planet_event = {
+	id = wtp.206
+	is_triggered_only = yes
+	title = wtp.206.name
+	desc = wtp.206.desc
+	picture = GFX_evt_alien_segregation
+	show_sound = event_public_unrest
+	location = root
+	trigger = {
+		check_variable = {
+			which = wtp_var_unrest
+			value >= @unrest_threshold_high
+		}
+		has_modifier = wtp_mod_unrest_xenophile
+	}
+	option = {
+		name = wtp.200.ok
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = wtp.200.propaganda
+		ai_chance = {
+			factor = 0
+		}
+		add_modifier = {
+			modifier = wtp_mod_propaganda
+			days = -1
+		}
+	}
+	option = {
+		name = wtp.200.crackdown
+		ai_chance = {
+			factor = 0
+		}
+		add_modifier = {
+			modifier = wtp_mod_crackdown
+			days = -1
+		}
+	}
+	option = {
+		name = wtp.200.release
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = wtp.200.release.tooltip
+		hidden_effect = {
+			wtp_effect_grant_autonomy = yes
+		}
+	}
+}
+
+planet_event = {
+	id = wtp.207
+	is_triggered_only = yes
+	title = wtp.207.name
+	desc = wtp.207.desc
+	picture = GFX_evt_announcement
+	show_sound = event_public_unrest
+	location = root
+	trigger = {
+		check_variable = {
+			which = wtp_var_unrest
+			value >= @unrest_threshold_high
+		}
+		has_modifier = wtp_mod_unrest_egalitarian
+	}
+	option = {
+		name = wtp.200.ok
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = wtp.200.propaganda
+		ai_chance = {
+			factor = 0
+		}
+		add_modifier = {
+			modifier = wtp_mod_propaganda
+			days = -1
+		}
+	}
+	option = {
+		name = wtp.200.crackdown
+		ai_chance = {
+			factor = 0
+		}
+		add_modifier = {
+			modifier = wtp_mod_crackdown
+			days = -1
+		}
+	}
+	option = {
+		name = wtp.200.release
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = wtp.200.release.tooltip
+		hidden_effect = {
+			wtp_effect_grant_autonomy = yes
+		}
+	}
+}
+
+planet_event = {
+	id = wtp.208
+	is_triggered_only = yes
+	title = wtp.208.name
+	desc = wtp.208.desc
+	picture = GFX_evt_alien_propaganda
+	show_sound = event_public_unrest
+	location = root
+	trigger = {
+		check_variable = {
+			which = wtp_var_unrest
+			value >= @unrest_threshold_high
+		}
+		has_modifier = wtp_mod_unrest_authoritarian
+	}
+	option = {
+		name = wtp.200.ok
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = wtp.200.propaganda
+		ai_chance = {
+			factor = 0
+		}
+		add_modifier = {
+			modifier = wtp_mod_propaganda
+			days = -1
+		}
+	}
+	option = {
+		name = wtp.200.crackdown
+		ai_chance = {
+			factor = 0
+		}
+		add_modifier = {
+			modifier = wtp_mod_crackdown
+			days = -1
+		}
+	}
+	option = {
+		name = wtp.200.release
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = wtp.200.release.tooltip
+		hidden_effect = {
+			wtp_effect_grant_autonomy = yes
+		}
+	}
+}
+
+planet_event = {
+	id = wtp.209
+	is_triggered_only = yes
+	title = wtp.209.name
+	desc = wtp.209.desc
+	picture = GFX_evt_alien_propaganda
+	show_sound = event_public_unrest
+	location = root
+	trigger = {
+		check_variable = {
+			which = wtp_var_unrest
+			value >= @unrest_threshold_high
+		}
+		has_modifier = wtp_mod_unrest_race
+	}
+	option = {
+		name = wtp.200.ok
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = wtp.200.release
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = wtp.200.release.tooltip
 		hidden_effect = {
 			wtp_effect_grant_autonomy = yes
 		}
@@ -357,13 +739,15 @@ planet_event = {
 
 # cancel unrest
 planet_event = {
-	id = wtp.3
+	id = wtp.300
 	is_triggered_only = yes
-	title = wtp.3.name
-	desc = wtp.3.desc
+	title = wtp.300.name
+	desc = wtp.300.desc
 	picture = GFX_evt_announcement
 	show_sound = event_announcement
+	location = root
 	trigger = {
+		wtp_can_have_unrest = yes
 		check_variable = {
 			which = wtp_var_unrest
 			value <= @unrest_threshold_low
@@ -371,11 +755,11 @@ planet_event = {
 		wtp_trigger_has_unrest = yes
 	}
 	immediate = {
-		log = "WTP::WTP.3(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 		wtp_effect_remove_unrest = yes
+		wtp_effect_remove_vanilla_unrest = yes
 	}
 	option = {
-		name = wtp.3.ok
+		name = wtp.300.ok
 		hidden_effect = {
 			remove_modifier = wtp_mod_propaganda
 			remove_modifier = wtp_mod_crackdown
@@ -385,77 +769,23 @@ planet_event = {
 
 # issue ultimatum
 planet_event = {
-	id = wtp.4
+	id = wtp.400
 	is_triggered_only = yes
-	title = wtp.4.name
+	title = wtp.400.name
+	desc = wtp.400.desc
 	picture = GFX_evt_burning_settlement
 	show_sound = event_planetary_riot
+	location = root
 	trigger = {
+		wtp_can_have_unrest = yes
 		check_variable = {
 			which = wtp_var_unrest
 			value >= @rebellion_threshold
 		}
 		wtp_trigger_has_unrest = yes
 	}
-	immediate = {
-		log = "WTP::WTP.4(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_spiritualist
-		}
-		text = wtp.4.1.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_materialist
-		}
-		text = wtp.4.2.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_militarist
-		}
-		text = wtp.4.3.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_pacifist
-		}
-		text = wtp.4.4.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_xenophobe
-		}
-		text = wtp.4.5.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_xenophile
-		}
-		text = wtp.4.6.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_egalitarian
-		}
-		text = wtp.4.7.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_authoritarian
-		}
-		text = wtp.4.8.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_race
-		}
-		text = wtp.4.9.desc
-	}
 	option = {
-		name = wtp.4.accept
+		name = wtp.400.accept
 		ai_chance = {
 			factor = 100
 			modifier = {
@@ -488,13 +818,13 @@ planet_event = {
 				}
 			}
 		}
-		custom_tooltip = wtp.4.accept.tooltip
+		custom_tooltip = wtp.400.accept.tooltip
 		hidden_effect = {
 			wtp_effect_grant_autonomy = yes
 		}
 	}
 	option = {
-		name = wtp.4.refuse
+		name = wtp.400.refuse
 		ai_chance = {
 			factor = 100
 			modifier = {
@@ -521,182 +851,22 @@ planet_event = {
 				}
 			}
 		}
-		custom_tooltip = wtp.4.refuse.tooltip
+		custom_tooltip = wtp.400.refuse.tooltip
 		hidden_effect = {
 			wtp_effect_start_war = yes
 		}
 	}
 	option = {
-		name = wtp.4.join
+		name = wtp.400.join
 		ai_chance = {
 			factor = 0
 		}
-		custom_tooltip = wtp.4.join.tooltip
+		custom_tooltip = wtp.400.join.tooltip
 		hidden_effect = {
 			wtp_effect_start_war = yes
 			event_target:wtp_rebel_alliance_leader = {
 				set_player = event_target:wtp_mother_country
 			}
-		}
-	}
-}
-
-# start sudden unrest
-planet_event = {
-	id = wtp.6
-	is_triggered_only = yes
-	title = wtp.6.name
-	picture = GFX_evt_smugglers_in_bar
-	show_sound = event_public_unrest
-	trigger = {
-		NOT = {
-			sector = {
-				is_same_value = PREVPREV.capital_scope.sector
-			}
-		}
-		NOT = {
-			wtp_trigger_has_unrest = yes
-		}
-	}
-	immediate = {
-		log = "WTP::WTP.6(this = [This.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
-		wtp_effect_start_unrest = yes
-		set_variable = {
-			which = wtp_var_unrest
-			value = @unrest_threshold_high
-		}
-		every_owned_pop = {
-			wipe_pop_ethos = yes
-			planet = {
-				switch = {
-					trigger = has_modifier
-					wtp_mod_unrest_spiritualist = {
-						prev = {
-							pop_change_ethic = ethic_spiritualist
-						}
-					}
-					wtp_mod_unrest_materialist = {
-						prev = {
-							pop_change_ethic = ethic_materialist
-						}
-					}
-					wtp_mod_unrest_militarist = {
-						prev = {
-							pop_change_ethic = ethic_militarist
-						}
-					}
-					wtp_mod_unrest_pacifist = {
-						prev = {
-							pop_change_ethic = ethic_pacifist
-						}
-					}
-					wtp_mod_unrest_xenophobe = {
-						prev = {
-							pop_change_ethic = ethic_xenophobe
-						}
-					}
-					wtp_mod_unrest_xenophile = {
-						prev = {
-							pop_change_ethic = ethic_xenophile
-						}
-					}
-					wtp_mod_unrest_egalitarian = {
-						prev = {
-							pop_change_ethic = ethic_egalitarian
-						}
-					}
-					wtp_mod_unrest_authoritarian = {
-						prev = {
-							pop_change_ethic = ethic_authoritarian
-						}
-					}
-				}
-			}
-			force_faction_evaluation = yes
-		}
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_spiritualist
-		}
-		text = wtp.6.1.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_materialist
-		}
-		text = wtp.6.2.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_militarist
-		}
-		text = wtp.6.3.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_pacifist
-		}
-		text = wtp.6.4.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_xenophobe
-		}
-		text = wtp.6.5.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_xenophile
-		}
-		text = wtp.6.6.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_egalitarian
-		}
-		text = wtp.6.7.desc
-	}
-	desc = {
-		trigger = {
-			has_modifier = wtp_mod_unrest_authoritarian
-		}
-		text = wtp.6.8.desc
-	}
-	option = {
-		name = wtp.6.ok
-		ai_chance = {
-			factor = 100
-		}
-	}
-	option = {
-		name = wtp.6.propaganda
-		ai_chance = {
-			factor = 0
-		}
-		add_modifier = {
-			modifier = wtp_mod_propaganda
-			days = -1
-		}
-	}
-	option = {
-		name = wtp.6.crackdown
-		ai_chance = {
-			factor = 0
-		}
-		add_modifier = {
-			modifier = wtp_mod_crackdown
-			days = -1
-		}
-	}
-	option = {
-		name = wtp.6.release
-		ai_chance = {
-			factor = 0
-		}
-		custom_tooltip = wtp.6.release.tooltip
-		hidden_effect = {
-			wtp_effect_grant_autonomy = yes
 		}
 	}
 }

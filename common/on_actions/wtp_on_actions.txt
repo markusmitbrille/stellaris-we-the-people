@@ -1,25 +1,24 @@
 on_monthly_pulse_country = {
 	events = {
-		wtp.100
-		wtp.101
-		wtp.106
+		wtp.1
+		wtp.2
 	}
 }
 
 on_planet_ownerless = {
 	events = {
-		wtp.102
+		wtp.3
 	}
 }
 
 on_planet_transfer = {
 	events = {
-		wtp.103
+		wtp.4
 	}
 }
 
 on_planet_conquer = {
 	events = {
-		wtp.104
+		wtp.5
 	}
 }

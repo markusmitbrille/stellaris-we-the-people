@@ -68,3 +68,32 @@ wtp_at_least_non_citizen_pops = {
 		}
 	}
 }
+
+# this = planet
+wtp_can_have_unrest = {
+	# only colonized
+	has_owner = yes
+	# only regular empires
+	owner = {
+		is_country_type = default
+		NOT = {
+			has_ethic = ethic_gestalt_consciousness
+		}
+	}
+	# paused orbital bombardment
+	has_orbital_bombardment = no
+	# paused during ground combat
+	has_ground_combat = no
+	# paused during occupation
+	exists = controller
+	controller = {
+		is_same_value = root.owner
+	}
+	# paused after recent revolution
+	NOR = {
+		owner = {
+			has_modifier = wtp_mod_revolutionary_war
+			has_modifier = wtp_mod_recent_revolution
+		}
+	}
+}

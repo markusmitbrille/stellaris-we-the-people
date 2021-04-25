@@ -1,6 +1,5 @@
 # this = planet
 wtp_effect_grant_autonomy = {
-	log = "WTP::wtp_effect_grant_autonomy(this = [This.GetName], root = [Root.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 	owner = {
 		save_event_target_as = wtp_mother_country
 	}
@@ -37,7 +36,6 @@ wtp_effect_grant_autonomy = {
 
 # this = planet
 wtp_effect_start_war = {
-	log = "WTP::wtp_effect_start_war(this = [This.GetName], root = [Root.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 	owner = {
 		save_event_target_as = wtp_mother_country
 	}
@@ -184,7 +182,6 @@ wtp_effect_start_war = {
 @wtp_starting_influence = 200
 # this = planet
 wtp_effect_release = {
-	log = "WTP::wtp_effect_release(this = [This.GetName], root = [Root.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 	# create rebel country
 	switch = {
 		trigger = has_modifier
@@ -474,6 +471,7 @@ wtp_effect_transfer_system_to_rebels = {
 		set_controller = event_target:wtp_last_rebel_country
 		# reset unrest
 		wtp_effect_remove_unrest = yes
+		wtp_effect_remove_vanilla_unrest = yes
 		set_variable = {
 			which = wtp_var_unrest
 			value = 0
@@ -495,9 +493,9 @@ wtp_effect_transfer_system_to_rebels = {
 
 # this = planet
 wtp_effect_start_unrest = {
-	log = "WTP::wtp_effect_start_unrest(this = [This.GetName], root = [Root.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 	# remove other unrest modifiers first
 	wtp_effect_remove_unrest = yes
+	wtp_effect_remove_vanilla_unrest = yes
 	# add semi-random unrest modifier
 	random_list = {
 		# traditionalist
@@ -3044,7 +3042,6 @@ wtp_effect_start_unrest = {
 
 # this = planet
 wtp_effect_remove_unrest = {
-	log = "WTP::wtp_effect_remove_unrest(this = [This.GetName], root = [Root.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 	remove_modifier = wtp_mod_unrest_spiritualist
 	remove_modifier = wtp_mod_unrest_materialist
 	remove_modifier = wtp_mod_unrest_militarist
@@ -3057,8 +3054,22 @@ wtp_effect_remove_unrest = {
 }
 
 # this = planet
+wtp_effect_remove_vanilla_unrest = {
+	remove_modifier = spiritualist_unrest
+	remove_modifier = materialist_unrest
+	remove_modifier = militarist_unrest
+	remove_modifier = pacifist_unrest
+	remove_modifier = xenophobe_unrest
+	remove_modifier = xenophile_unrest
+	remove_modifier = egalitarian_unrest
+	remove_modifier = authoritarian_unrest
+	remove_modifier = riots_averted
+	remove_modifier = major_terrorist_action
+	remove_modifier = minor_terrorist_action
+}
+
+# this = planet
 wtp_effect_calculate_planet_trend = {
-	log = "WTP::wtp_effect_calculate_planet_trend(this = [This.GetName], root = [Root.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 	set_variable = {
 		which = wtp_var_trend
 		value = 0
@@ -3074,7 +3085,6 @@ wtp_effect_calculate_planet_trend = {
 
 # this = pop
 wtp_effect_calculate_pop_trend = {
-	log = "WTP::wtp_effect_calculate_pop_trend(this = [This.GetName], root = [Root.GetName], from = [From.GetName], fromfrom = [FromFrom.GetName])"
 	# non-sapients, undesirables don't contribute unrest
 	if = {
 		limit = {
