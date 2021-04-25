@@ -3151,61 +3151,61 @@ wtp_effect_calculate_pop_trend = {
 		# happiness factor rounded to nearest 10
 		switch = {
 			trigger = happiness
-			5 < {
+			0.05 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = 1
 				}
 			}
-			15 < {
+			0.15 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = 0.9
 				}
 			}
-			25 < {
+			0.25 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = 0.8
 				}
 			}
-			35 < {
+			0.35 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = 0.7
 				}
 			}
-			45 < {
+			0.45 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = 0.6
 				}
 			}
-			55 < {
+			0.55 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = 0.5
 				}
 			}
-			65 < {
+			0.65 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = 0.4
 				}
 			}
-			75 < {
+			0.75 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = 0.3
 				}
 			}
-			85 < {
+			0.85 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = 0.2
 				}
 			}
-			95 < {
+			0.95 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = 0.1
@@ -3224,61 +3224,61 @@ wtp_effect_calculate_pop_trend = {
 		# happiness factor rounded to nearest 10
 		switch = {
 			trigger = happiness
-			5 < {
+			0.05 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = 0
 				}
 			}
-			15 < {
+			0.15 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = -0.1
 				}
 			}
-			25 < {
+			0.25 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = -0.2
 				}
 			}
-			35 < {
+			0.35 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = -0.3
 				}
 			}
-			45 < {
+			0.45 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = -0.4
 				}
 			}
-			55 < {
+			0.55 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = -0.5
 				}
 			}
-			65 < {
+			0.65 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = -0.6
 				}
 			}
-			75 < {
+			0.75 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = -0.7
 				}
 			}
-			85 < {
+			0.85 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = -0.8
 				}
 			}
-			95 < {
+			0.95 < {
 				set_variable = {
 					which = wtp_var_happiness
 					value = -0.9
