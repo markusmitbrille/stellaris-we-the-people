@@ -81,7 +81,7 @@ wtp_mod_crackdown = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_martial_law.dds"
 	icon_frame = 2
 	pop_government_ethic_attraction = 0.25
-	pop_happiness = -0.5
+	pop_happiness = -0.25
 }
 
 wtp_mod_revolutionary_war = {
