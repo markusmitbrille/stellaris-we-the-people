@@ -90,7 +90,7 @@ planet_event = {
 		wtp_effect_remove_vanilla_unrest = yes
 		set_variable = {
 			which = wtp_var_unrest
-			value = @unrest_threshold_low
+			value = 0
 		}
 	}
 }
@@ -105,7 +105,7 @@ planet_event = {
 		wtp_effect_remove_vanilla_unrest = yes
 		set_variable = {
 			which = wtp_var_unrest
-			value = @unrest_threshold_low
+			value = 0
 		}
 	}
 }
