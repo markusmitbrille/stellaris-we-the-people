@@ -92,7 +92,7 @@
   wtp.400.join.tooltip:0 "Join the rebellion and take over as their leader."
 
   wtp.900.name:0 "Civil War in the [wtp_mother_country.GetName]"
-  wtp.900.desc:0 "War has broken out in the [wtp_mother_country.GetName]. After an extensive period of civil unrest, the local government of [wtp_rebel_alliance_leader.Capital.GetName] has declared its independence from [wtp_mother_country.Capital.GetName], giving rise to the [wtp_rebel_alliance_leader.GetName]. Only time will tell, whether they will emerge as a new galactic power from the ashes of this conflict, or if this is just another doomed uprising."
+  wtp.900.desc:0 "War has broken out in the §Y[wtp_mother_country.GetName]§!. After an extensive period of civil unrest, the local government of [wtp_rebel_alliance_leader.Capital.GetName] has declared its independence from [wtp_mother_country.Capital.GetName], giving rise to the §Y[wtp_rebel_alliance_leader.GetName]§!. Only time will tell, whether they will emerge as a new galactic power from the ashes of this conflict, or if this is just another doomed uprising."
   wtp.900.ok:0 "Keep tabs on the situation."
 
   wtp_opinion_rebel:0 "Treacherous Rebels"

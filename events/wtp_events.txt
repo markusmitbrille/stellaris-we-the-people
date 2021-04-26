@@ -871,18 +871,19 @@ planet_event = {
 	}
 }
 
-# notification event
+# civil war started notification
 country_event = {
 	id = wtp.900
 	is_triggered_only = yes
 	title = wtp.900.name
 	desc = wtp.900.desc
-	picture = GFX_evt_burning_settlement
-	show_sound = event_planetary_riot
-	location = event_target:wtp_mother_country_capital_scope
+	picture = GFX_evt_announcement
+	show_sound = event_announcement
+	location = event_target:wtp_mother_country
 	trigger = {
-		exists = event_target:wtp_mother_country_capital_scope
-		NOT = {
+		exists = event_target:wtp_mother_country
+		NOR = {
+			is_same_value = event_target:wtp_mother_country
 			any_war = {
 				is_war_participant = {
 					who = event_target:wtp_mother_country

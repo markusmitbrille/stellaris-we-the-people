@@ -182,10 +182,6 @@ wtp_effect_start_war = {
 	every_playable_country = {
 		limit = {
 			has_communications = event_target:wtp_mother_country
-			NOR = {
-				is_same_value = root
-				is_same_value = event_target:wtp_mother_country
-			}
 		}
 		country_event = {
 			id = wtp.900
