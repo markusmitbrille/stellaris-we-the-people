@@ -79,7 +79,7 @@
   wtp.200.release.tooltip:0 "Release this planet and nearby systems as a vassal country. This will drastically diminish the [Root.Owner.GetName]'s authority, which in turn may incite other malcontents to revolution."
 
   wtp.300.name:0 "Civil Unrest Ceases"
-  wtp.300.desc:0 "Demonstrations have died down and daily life has returned to normal on §Y[Root.GetName]§! as civil unrest ceases. People have laid down their protest signs and returned to their regular jobs. While some radicals still continue stirring up trouble, the silent majority no longer fosters thoughts of rebellion."
+  wtp.300.desc:0 "Demonstrations have died down and daily life has returned to normal on §Y[Root.GetName]§! as civil unrest ceases. People have put down the protest signs and returned to their regular jobs. While some radicals still continue stirring up trouble, the silent majority no longer fosters thoughts of rebellion."
   wtp.300.ok:0 "Excellent."
 
   wtp.400.name:0 "Final Ultimatum"
