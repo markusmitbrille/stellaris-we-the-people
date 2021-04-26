@@ -3190,8 +3190,16 @@ wtp_effect_calculate_pop_trend = {
 	if = {
 		limit = {
 			OR = {
-				# non-citizens always contribute unrest
-				NOT = {
+				# non-authoritarian slaves always contribute unrest
+				AND = {
+					is_enslaved = yes
+					NOT = {
+						is_authoritarian = yes
+					}
+				}
+				# free non-citizens always contribute unrest
+				NOR = {
+					is_enslaved = yes
 					has_citizenship_rights = yes
 				}
 				# citizens contribute unrest based on party representation
