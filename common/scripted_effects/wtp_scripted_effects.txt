@@ -3140,10 +3140,20 @@ wtp_effect_calculate_pop_trend = {
 				is_non_sapient_robot = yes
 				is_being_purged = yes
 				is_being_assimilated = yes
+				NOR = {
+					is_pop_category = slave
+					is_pop_category = worker
+					is_pop_category = specialist
+					is_pop_category = ruler
+				}
 			}
 		}
 		set_variable = {
 			which = wtp_var_trend
+			value = 0
+		}
+		set_variable = {
+			which = wtp_var_happiness
 			value = 0
 		}
 		break = yes
