@@ -19,7 +19,7 @@ country_event = {
 			if = {
 				limit = {
 					sector = {
-						is_same_value = PREVPREV.capital_scope.sector
+						is_same_value = prevprev.capital_scope.sector
 					}
 				}
 				wtp_effect_remove_unrest = yes
