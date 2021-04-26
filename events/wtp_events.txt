@@ -1,7 +1,7 @@
 namespace = wtp
-@unrest_threshold_low = 1.2
-@unrest_threshold_high = 6
-@rebellion_threshold = 24
+@unrest_threshold_low = 12
+@unrest_threshold_high = 60
+@rebellion_threshold = 240
 # on monthly pulse
 country_event = {
 	id = wtp.1
