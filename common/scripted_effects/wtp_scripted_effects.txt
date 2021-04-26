@@ -250,6 +250,19 @@ wtp_effect_release = {
 			}
 		}
 	}
+	# set relationship flags
+	event_target:wtp_last_rebel_country = {
+		set_relation_flag = {
+			who = event_target:wtp_mother_country
+			flag = wtp_relation_flag_mother_country
+		}
+	}
+	event_target:wtp_mother_country = {
+		set_relation_flag = {
+			who = event_target:wtp_last_rebel_country
+			flag = wtp_relation_flag_rebel_country
+		}
+	}
 	# transfer capital system
 	solar_system = {
 		wtp_effect_transfer_system_to_rebels = yes
